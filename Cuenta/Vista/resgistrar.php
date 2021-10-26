@@ -14,7 +14,7 @@
     <div class="header">
       <div class="nav-bar">
         <div class="brand">
-          <a href="indexPortada.php">
+          <a href="../../index.php">
             <img src="../../imgindex/logo.png" alt="">
           </a>
         </div>
@@ -56,7 +56,7 @@
             <h1 class="tittle">Registrarse</h1>
 
             <label>Nombres</label>
-            <input type="text" name="Nombre" placeholder="Nombre" required><br><br>
+            <input type="text" name="Nombres" placeholder="Nombres" required><br><br>
 
 
             <label>Apellidos</label>
@@ -64,7 +64,7 @@
             
 
             <label>Tipo de Documento</label>
-            <select name="Estatus" id="" required>
+            <select name="TipodeDocumento" id="" required>
               <option value=""></option>
 					    <option value="1">C.C</option>
 					    <option value="2">T.I</option>
@@ -85,7 +85,7 @@
 
 
             <label>Sexo</label>
-            <select name="Estatus" id="" required>
+            <select name="Sexo" id="" required>
               <option value=""></option>
 					    <option value="1">F</option>
 					    <option value="2">M</option>
@@ -97,11 +97,11 @@
 
 
 
-            <input type="submit" name="Enviar" value="Insertar Registro">
+            <input type="submit" name="Enviar" value="Registrarse">
           </form>
       </div>
   </section>
 
-  <script src="../indexJava/app.js"></script>
+  <script src="../../indexJava/app.js"></script>
 </body>
 </html>
