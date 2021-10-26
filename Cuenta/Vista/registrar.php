@@ -14,7 +14,7 @@
     <div class="header">
       <div class="nav-bar">
         <div class="brand">
-          <a href="../../index.php">
+          <a href="../../indexPortada.php">
             <img src="../../imgindex/logo.png" alt="">
           </a>
         </div>
