@@ -27,7 +27,7 @@
             <li><a href="#services" data-after="Informacion">Informacion</a></li>
             <li><a href="#about" data-after="Productos">Productos</a></li>
             <li><a href="#contact" data-after="Contactos">Contactos</a></li>
-            <li><a href="Cuenta/Vista/resgistrar.php" data-after="Inicio sesion/Registrarse">Inicio sesion/Registrarse</a></li>
+            <li><a href="Cuenta/Vista/registrar.php" data-after="Inicio sesion/Registrarse">Inicio sesion/Registrarse</a></li>
           </ul>
         </div>
       </div>

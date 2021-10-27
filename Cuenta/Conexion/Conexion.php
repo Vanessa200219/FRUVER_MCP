@@ -1,28 +1,18 @@
-<?php 
-class Conexion{    
-    private $dsn='mysql:host=localhost;dbname=database_fruvermcp';
-    private $usr='root';
-    private $psw='';  
-    private $cnx;
+<?php  
+	$contrasena = '';
+	$usuario = 'root';
+	$nombrebd= 'databasefruvermcp';
 
-
-public function __construct(){
-    try {
-        $this->cnx=new PDO($this->dsn,$this->usr,$this->psw); 
-    } catch (PDOException $th) {
-        echo $th->getMessage();
-    }
-}
-
-public function desconectar(){
-    $this->cnx=null;
-}
-public function getCnx(){
-    return $this->cnx;
-}
-public function setCnx($cnx){
-    $this->cnx=$cnx;
-}
-}
+	try {
+		$bd = new PDO(
+			'mysql:host=localhost;
+			dbname='.$nombrebd,
+			$usuario,
+			$contrasena,
+			array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
+		);
+	} catch (Exception $e) {
+		echo "Error de conexión ".$e->getMessage();
+	}
 
 ?>

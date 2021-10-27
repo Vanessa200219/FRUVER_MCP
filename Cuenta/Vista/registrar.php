@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSSindex/indexPortada.css">
+	<link rel="stylesheet" href="../CSSCuenta/cuentas.css">
     <title>Registrarse</title>
 </head>
 <body>
@@ -23,10 +24,10 @@
             <div class="bar"></div>
           </div>
           <ul>
-            <li><a href="#" data-after="Inicio">Inicio</a></li>
-            <li><a href="#about" data-after="Productos">Productos</a></li>
-            <li><a href="#services" data-after="Informacion">Ayuda</a></li>
-            <li><a href="#contact" data-after="Contactos">Contactos</a></li>
+            <li><a href="../../indexPortada.php" data-after="Inicio">Inicio</a></li>
+            <li><a href="../../indexPortada.php#about" data-after="Productos">Productos</a></li>
+            <li><a href="" data-after="Informacion">Ayuda</a></li>
+            <li><a href="../../indexPortada.php#contact" data-after="Contactos">Contactos</a></li>
             <li></li>
           </ul>
         </div>
@@ -37,70 +38,76 @@
 
 
   <!-- Registrar -->
-  <section>
-
-  <!-- MENSAJE DE REGISTRO -->
-        <section class="message">
-            <div class="message__text">
-                <?php
-                    include("../Controlador/ProductoRegistro.php");
-                ?>
-            </div>
-        </section> 
-    <!-- FIN DE MENSAJE REGISTRO -->
-
   
-      <div>
-        <form class="form__items" action="" method="GET">
-
-            <h1 class="tittle">Registrarse</h1>
-
-            <label>Nombres</label>
-            <input type="text" name="Nombres" placeholder="Nombres" required><br><br>
 
 
-            <label>Apellidos</label>
-            <input type="text" name="Apellidos" placeholder="Apellidos" required><br><br>
-            
+  <form class="form" method="POST" action="../Controlador/insertar.php">
+  <h3 class="Text_center">REGISTRARSE</h3>
+    <table class="form__items">
+			<tr>
+				<td>Nombre: </td>
+				<td><input type="text" name="Nombres" placeholder="Nombres" required></td>
+			</tr>
 
-            <label>Tipo de Documento</label>
+		  <tr>
+			  <td>Apellido: </td>
+				<td><input type="text" name="Apellidos" placeholder="Apellidos" required></td>
+			</tr>
+
+			<tr>
+				<td>Tipo de Documento: </td>
+				  <td>
             <select name="TipodeDocumento" id="" required>
-              <option value=""></option>
+					    <option value=""></option>
 					    <option value="1">C.C</option>
 					    <option value="2">T.I</option>
 					    <option value="3">C.E</option>
-				    </select><br><br>
-        
+				    </select>
+          </td>
+			</tr>
 
-            <label>Numero de Documento </label>
-            <input type="text" name="NumerodeDocumento" minlength="7" maxlength="10" placeholder="Numero de Documento" required><br><br>
-            
+			<tr>
+				<td>Numero de Documento: </td>
+				<td><input type="text" name="NumerodeDocumento" minlength="7" maxlength="10" placeholder="Numero de Documento" required></td>
+			</tr>
 
-            <label>Telefono</label>
-            <input type="text" name="Telefono" placeholder="Telefono" minlength="10" maxlength="10" required><br><br>
-            
+			<tr>
+				<td>Telefono: </td>
+				<td><input type="text" name="Telefono" minlength="10" maxlength="10" required></td>
+			</tr>
 
-            <label>Correo Electronico</label>
-            <input type="text" name="CorreoElectronico" pattern=".+@gmail.com" placeholder="ejemplo@gmail.com" required><br><br>
+      <tr>
+				<td>Email: </td>
+				<td><input type="text" name="CorreoElectronico" pattern=".+@gmail.com" placeholder="ejemplo@gmail.com" required></td>
+			</tr>
+
+      <tr>
+				<td>Sexo: </td>
+				<td>
+          <select name="Sexo" id="" required>
+					  <option value=""></option>
+					  <option value="1">F</option>
+					  <option value="2">M</option>
+				  </select>
+        </td>
+			</tr>
+
+      <tr>
+				<td>Contraseña: </td>
+				<td><input type="password" name="Contrasena"></td>
+			</tr>
 
 
-            <label>Sexo</label>
-            <select name="Sexo" id="" required>
-              <option value=""></option>
-					    <option value="1">F</option>
-					    <option value="2">M</option>
-				    </select><br><br>
+
+			<input type="hidden" name="oculto" value="1">
 
 
-            <label>Contrasena</label>
-            <input type="password" name="Contrasena" placeholder="Contrasena" required><br><br>
-
-
-
-            <input type="submit" name="Enviar" value="Registrarse">
-          </form>
-      </div>
-  </section>
+			<tr>
+				<td><input type="reset" name=""></td>
+				<td><input type="submit" name="Enviar" value="Registrarse"></td>
+			</tr>
+		</table>
+	</form>
 
   <script src="../../indexJava/app.js"></script>
 </body>
