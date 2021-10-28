@@ -13,7 +13,7 @@
 <head>
 	<title>Informacion</title>
 	<meta charset="utf-8">
-    <link rel="stylesheet" href="../../CSSindex/indexPortada.css">
+    <link rel="stylesheet" href="../../CSSindex/Portada.css">
 	<link rel="stylesheet" href="../CSSCuenta/estilo.css">
 </head>
 <body>
@@ -22,12 +22,13 @@
     <!-- MENU -->
    <section id="header">
     <div class="header">
-      <div class="nav-bar">
-        <div class="brand">
+	<div class="brand">
           <a href="../../indexPortada.php">
             <img src="../../imgindex/logo.png" alt="">
           </a>
         </div>
+      <div class="nav-bar">
+        
         <div class="nav-list">
           <div class="hamburger">
             <div class="bar"></div>

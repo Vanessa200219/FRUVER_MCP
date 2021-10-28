@@ -1,7 +1,7 @@
 <?php  
 	$contrasena = '';
 	$usuario = 'root';
-	$nombrebd= 'mvc';
+	$nombrebd= 'databasefruvermcp';
 
 	try {
 		$bd = new PDO(

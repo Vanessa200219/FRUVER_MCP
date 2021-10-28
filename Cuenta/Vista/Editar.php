@@ -16,20 +16,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../CSSindex/indexPortada.css">
-    <title>Mdificacion Informacion</title>
+    <link rel="stylesheet" href="../../CSSindex/Portada.css">
+    <link rel="stylesheet" href="../CSSCuenta/Editar.css">
+    <title>Modificacion Informacion</title>
 </head>
 <body>
     
     <!-- MENU -->
   <section id="header">
     <div class="header">
-      <div class="nav-bar">
         <div class="brand">
           <a href="../../indexPortada.php">
             <img src="../../imgindex/logo.png" alt="">
           </a>
         </div>
+      <div class="nav-bar">
+        
         <div class="nav-list">
           <div class="hamburger">
             <div class="bar"></div>
@@ -49,7 +51,10 @@
 
 
   <!-- Registrar -->
-  
+    <div class="texto">
+      <h6>Modificar Informacion</h6>
+    </div>
+
     <form class="form" method="POST" action="../Controlador/editarProceso.php">
         <table class="form__items">
 			<tr>
