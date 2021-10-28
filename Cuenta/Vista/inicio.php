@@ -33,7 +33,7 @@
     <div class="header">
       <div class="nav-bar">
         <div class="brand">
-          <a href="indexPortada.php">
+          <a href="inicio.php">
             <img src="../../imgindex/logo.png" alt="">
           </a>
         </div>
@@ -45,7 +45,7 @@
             <li><a href="inicio.php" data-after="Inicio">Inicio</a></li>
             <li><a href="" data-after="Ayuda">Ayuda</a></li>
             <li><a href="" data-after="Productos">Productos</a></li>
-            <li><a href="" data-after="Promociones">Promociones</a></li>
+            <li><a href="Listar.php" data-after="Promociones">Datos</a></li>
             <li><a href="../Controlador/CerrarSesion.php" data-after="Inicio sesion/Registrarse">CerrarSesion</a></li>
           </ul>
         </div>

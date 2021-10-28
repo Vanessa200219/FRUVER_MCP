@@ -1,11 +1,20 @@
 <?php  
-
+	session_start();
+	if (!isset($_SESSION['Nombres'])) {
+		header('Location: iniciarsesion.php');
+	}elseif(isset($_SESSION['Nombres']))
+	
+	{
 		include '../Conexion/Conexion.php';
-		$sentencia = $bd->query("SELECT * FROM persona;");
+		$sentencia = $bd->query("SELECT * FROM persona WHERE CorreoElectronico='".$_POST['usuario']."' AND Contrasena='".$_POST['contraseña']."'") or die(mysql_error());
 		$persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
-	
+	}else{
+		echo "Error";
+	}
+
 
 	
+?>
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +33,7 @@
     <div class="header">
       <div class="nav-bar">
         <div class="brand">
-          <a href="../../indexPortada.php">
+          <a href="../Vista/inicio.php">
             <img src="../../imgindex/logo.png" alt="">
           </a>
         </div>
