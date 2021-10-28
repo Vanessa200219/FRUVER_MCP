@@ -1,10 +1,29 @@
+<?php  
+	session_start();
+	if (!isset($_SESSION['Nombres'])) {
+		header('Location: iniciarsesion.php');
+	}elseif(isset($_SESSION['Nombres'])){
+		include '../Conexion/Conexion.php';
+		$sentencia = $bd->query("SELECT * FROM persona;");
+		$alumnos = $sentencia->fetchAll(PDO::FETCH_OBJ);
+	}else{
+		echo "Error";
+	}
+
+
+	
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="CSSindex/indexPortada.css">
+  <link rel="stylesheet" href="../../CSSindex/indexPortada.css">
   <title>FRUVER MCP</title>
 </head>
 
@@ -15,7 +34,7 @@
       <div class="nav-bar">
         <div class="brand">
           <a href="indexPortada.php">
-            <img src="imgindex/logo.png" alt="">
+            <img src="../../imgindex/logo.png" alt="">
           </a>
         </div>
         <div class="nav-list">
@@ -23,11 +42,11 @@
             <div class="bar"></div>
           </div>
           <ul>
-            <li><a href="#" data-after="Inicio">Inicio</a></li>
-            <li><a href="#services" data-after="Informacion">Informacion</a></li>
-            <li><a href="#about" data-after="Productos">Productos</a></li>
-            <li><a href="#contact" data-after="Contactos">Contactos</a></li>
-            <li><a href="Cuenta/Vista/iniciarsesion.php" data-after="Inicio sesion/Registrarse">Inicio sesion/Registrarse</a></li>
+            <li><a href="inicio.php" data-after="Inicio">Inicio</a></li>
+            <li><a href="" data-after="Ayuda">Ayuda</a></li>
+            <li><a href="" data-after="Productos">Productos</a></li>
+            <li><a href="" data-after="Promociones">Promociones</a></li>
+            <li><a href="../Controlador/CerrarSesion.php" data-after="Inicio sesion/Registrarse">CerrarSesion</a></li>
           </ul>
         </div>
       </div>
@@ -41,7 +60,7 @@
   <section id="hero">
     <div class="hero container">
       <div>
-        <h1>FRUVER MCP <span></span></h1>
+        <h1>Bienvenido: <?php echo $_SESSION['Nombres'] ?> <span></span></h1>
         <h1>Promociones y Descuentos<span></span></h1>
         <h1>15% de descuento en Productos<span></span></h1>
         <a href="" type="button" class="cta">Promociones</a>
@@ -54,7 +73,6 @@
 
 
   <!-- SECCION CONTENIDO -->
-
 
   <section id="services">
     <div class="services container">
@@ -273,7 +291,7 @@
       
   </section>
   <!-- FIN FOOTER -->
-  <script src="indexJava/app.js"></script>
+  <script src="../../indexJava/app.js"></script>
 </body>
 
 </html>

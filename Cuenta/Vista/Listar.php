@@ -14,7 +14,7 @@
 	<title>Informacion</title>
 	<meta charset="utf-8">
     <link rel="stylesheet" href="../../CSSindex/indexPortada.css">
-	<link rel="stylesheet" href="../CSSCuenta/cuentas.css">
+	<link rel="stylesheet" href="../CSSCuenta/estilo.css">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
             <li><a href="" data-after="Inicio">Inicio</a></li>
             <li><a href="" data-after="Productos">Productos</a></li>
             <li><a href="" data-after="Informacion">Ayuda</a></li>
-            <li><a href="" data-after="Contactos">Contactos</a></li>
+            <li><a href="" data-after="Contactos">Informacion</a></li>
             <li></li>
           </ul>
         </div>
@@ -44,7 +44,160 @@
     </div>
   </section>
   <!-- FIN DE MENU -->   
-	<center>
+
+
+
+<section>
+<div></div>
+</section>
+
+
+<h3 class="tittle">Informacion Personal</h3>
+<section class="contenedor">
+
+
+	<table class="information">
+			<tr>
+				<td id="label">Nombres </td>
+				<td id="input">
+					<?php 
+						foreach ($persona as $dato) {
+					?>
+						<?php echo $dato->Nombres; ?>
+					
+					<?php
+						}
+					?>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td id="label">Apellidos </td>
+				<td id="input">
+					<?php 
+						foreach ($persona as $dato) {
+					?>
+						<?php echo $dato->Apellidos; ?>
+					
+					<?php
+						}
+					?>
+				</td>
+			</tr>
+
+			<tr>
+				<td id="label">Tipo de Documento </td>
+				<td id="input">
+					<?php 
+						foreach ($persona as $dato) {
+					?>
+						<?php echo $dato->TipodeDocumento; ?>
+					
+					<?php
+						}
+					?>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td id="label">Numero de Documento </td>
+				<td id="input">
+					<?php 
+						foreach ($persona as $dato) {
+					?>
+						<?php echo $dato->NumerodeDocumento; ?>
+					
+					<?php
+						}
+					?>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td id="label">Telefono </td>
+				<td id="input">
+					<?php 
+						foreach ($persona as $dato) {
+					?>
+						<?php echo $dato->Telefono; ?>
+					
+					<?php
+						}
+					?>
+				</td>
+			</tr>
+
+			<tr>
+				<td id="label">Correo Electronico </td>
+				<td id="input">
+					<?php 
+						foreach ($persona as $dato) {
+					?>
+						<?php echo $dato->CorreoElectronico; ?>
+					
+					<?php
+						}
+					?>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td id="label">Sexo </td>
+				<td id="input">
+					<?php 
+						foreach ($persona as $dato) {
+					?>
+						<?php echo $dato->Sexo; ?>
+					
+					<?php
+						}
+					?>
+				</td>
+			</tr>
+
+			<tr>
+				<td id="label">Contraseña </td>
+				<td id="input">
+					<?php 
+						foreach ($persona as $dato) {
+					?>
+						<?php echo $dato->Contrasena; ?>
+					
+					<?php
+						}
+					?>
+				</td>
+			</tr>
+
+			<tr>
+				<?php 
+						foreach ($persona as $dato) {
+				?>
+					<td><a class="editar" href="Editar.php?id=<?php echo $dato->NumerodeDocumento; ?>">Editar</a></td>
+					<td><a class="eliminar" href="../Controlador/Eliminar.php?id=<?php echo $dato->NumerodeDocumento; ?>">Eliminar</a></td>
+				<?php
+					}
+				?>
+			</tr>
+
+	</table>
+</section>
+
+
+
+
+
+
+
+
+
+
+  
+	<!-- <center>
 		<div class="div__firmts">
 		<h3 class="Text_center">Mis Datos</h3>
 		<table class="table__1">
@@ -87,7 +240,7 @@
 
 		
 
-	</center>
+	</center> -->
 	<script src="../../indexJava/app.js"></script>
 </body>
 </html>

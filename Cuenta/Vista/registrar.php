@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSSindex/indexPortada.css">
-	<link rel="stylesheet" href="../CSSCuenta/cuentas.css">
+	<link rel="stylesheet" href="../CSSCuenta/estilo.css">
     <title>Registrarse</title>
 </head>
 <body>
@@ -78,7 +78,7 @@
 
       <tr>
 				<td>Email: </td>
-				<td><input type="text" name="CorreoElectronico" pattern=".+@gmail.com" placeholder="ejemplo@gmail.com" required></td>
+				<td><input type="text" name="CorreoElectronico" pattern=".+@.+.com" placeholder="ejemplo@gmail.com" required></td>
 			</tr>
 
       <tr>
