@@ -24,14 +24,16 @@ try {
     $sentencia = $bd->prepare("INSERT INTO persona(Nombres,Apellidos,TipodeDocumento,NumerodeDocumento,Telefono,CorreoElectronico,Sexo,Contrasena,id_rol) VALUES (?,?,?,?,?,?,?,?,?);");
 	$resultado = $sentencia->execute([$nombre,$apellido,$tipodedocumento,$numerodedocumento,$telefono,$email,$sexo,$contrasena,$rol]);
 
-} catch(PDOException) {
-    //echo "Los Datos Ingresados ya Estan en el sistema";
+} catch(PDOException $e) {
+    //$e = header('Location:insertar.php');
 }
+
+
 if ($resultado === TRUE) {
     //echo "Insertado correctamente";
     header('Location: ../Vista/inicio.php');
 }else{
-    echo "Error";
+    //echo "Error";
 }
 ?>
 
@@ -48,7 +50,7 @@ if ($resultado === TRUE) {
 <body>
 
     <div class="brand">
-          <a href="../../indexPortada.php">
+          <a href="../../Portada.php">
             <img src="../../imgindex/logo.png" alt="">
           </a>
         </div>
@@ -60,7 +62,7 @@ if ($resultado === TRUE) {
 
     <div>
         <a class="volver" href="../Vista/registrar.php">Volver</a>
-        <a class="inicio" href="../../indexPortada.php">Inicio</a>
+        <a class="inicio" href="../../Portada.php">Inicio</a>
     </div>
 </body>
 </html>

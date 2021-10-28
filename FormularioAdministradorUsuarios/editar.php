@@ -1,5 +1,5 @@
 <?php  
-	include '../Conexion/Conexion.php';
+	include 'model/conexion.php';
 		$id = $_GET['id'];
 
 		$sentencia = $bd->prepare("SELECT * FROM persona WHERE NumerodeDocumento = ?;");
@@ -13,48 +13,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../CSSindex/Portada.css">
-    <link rel="stylesheet" href="../CSSCuenta/Editar.css">
-    <title>Modificacion Informacion</title>
+    <title>Editar Producto</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="CSS/tabla.css">
 </head>
 <body>
+
+ <!-- HEADER DE RUTAS Y DESCARGAS -->
+ <div id="header">
+            
+            <a class="return  header" href="">INICIO</a>
+            <a class="products  header" href="index.php">USUARIOS</a>
     
-    <!-- MENU -->
-  <section id="header">
-    <div class="header">
-        <div class="brand">
-          <a href="../../indexPortada.php">
-            <img src="../../imgindex/logo.png" alt="">
-          </a>
         </div>
-      <div class="nav-bar">
-        
-        <div class="nav-list">
-          <div class="hamburger">
-            <div class="bar"></div>
-          </div>
-          <ul>
-            <li><a href="#" data-after="Inicio">Inicio</a></li>
-            <li><a href="#about" data-after="Productos">Productos</a></li>
-            <li><a href="#services" data-after="Informacion">Ayuda</a></li>
-            <li><a href="#contact" data-after="Contactos">Contactos</a></li>
-            <li></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- FIN DE MENU -->    
+       <!-- FIN DE HEADER RUTAS Y DESCARGAS -->
 
 
   <!-- Registrar -->
-    <div class="texto">
-      <h6>Modificar Informacion</h6>
-    </div>
-
+  <center>
+    <h3>Editar Usuario:</h3>
     <form class="form" method="POST" action="../Controlador/editarProceso.php">
         <table class="form__items">
 			<tr>
@@ -91,7 +68,6 @@
 			</tr>
 		</table>
 	</form>
-
-  <script src="../../indexJava/app.js"></script>
+    </center>
 </body>
 </html>
