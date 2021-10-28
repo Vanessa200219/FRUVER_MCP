@@ -5,12 +5,12 @@
 	}elseif(isset($_SESSION['Nombres'])){
 		include '../Conexion/Conexion.php';
 		$sentencia = $bd->query("SELECT * FROM persona;");
-		$alumnos = $sentencia->fetchAll(PDO::FETCH_OBJ);
+		$persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
 	}else{
 		echo "Error";
 	}
 
-
+foreach ($persona as $dato) { }
 	
 ?>
 
@@ -23,22 +23,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../CSSindex/Portada.css">
+  <link rel="stylesheet" href="../../CSSindex/index.css">
   <title>FRUVER MCP</title>
 </head>
 
 <body>
   <!-- MENU -->
+  
   <section id="header">
     <div class="header">
-<<<<<<< HEAD
-      <div class="nav-bar">
+      
         <div class="brand">
           <a href="inicio.php">
-=======
-    <div class="brand">
-          <a href="indexPortada.php">
->>>>>>> 4fd7c7da344cd1875015b930969ea655bd1a35a4
             <img src="../../imgindex/logo.png" alt="">
           </a>
         </div>
@@ -52,13 +48,14 @@
             <li><a href="inicio.php" data-after="Inicio">Inicio</a></li>
             <li><a href="" data-after="Ayuda">Ayuda</a></li>
             <li><a href="" data-after="Productos">Productos</a></li>
-            <li><a href="Listar.php" data-after="Promociones">Datos</a></li>
+            <li><form action="../Vista/Listar.php?id=<?php echo $dato->NumerodeDocumento; ?>" method="POST"><input type="submit" value="Datos" name="btn2"></form></li>
             <li><a href="../Controlador/CerrarSesion.php" data-after="Inicio sesion/Registrarse">CerrarSesion</a></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
+
   <!-- FIN DE MENU -->
 
 

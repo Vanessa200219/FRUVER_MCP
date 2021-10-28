@@ -6,8 +6,12 @@
 	
 	{
 		include '../Conexion/Conexion.php';
-		$sentencia = $bd->query("SELECT * FROM persona WHERE CorreoElectronico='".$_POST['usuario']."' AND Contrasena='".$_POST['contraseña']."'") or die(mysql_error());
+		if (isset($_POST['btn2'])) {
+		
+		$numero=1000002891;
+		$sentencia = $bd->query("SELECT * FROM persona WHERE NumerodeDocumento = $numero");
 		$persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
+		}
 	}else{
 		echo "Error";
 	}
@@ -15,30 +19,23 @@
 
 	
 ?>
-?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<title>Informacion</title>
 	<meta charset="utf-8">
-    <link rel="stylesheet" href="../../CSSindex/Portada.css">
+    <link rel="stylesheet" href="../../CSSindex/index.css">
 	<link rel="stylesheet" href="../CSSCuenta/estilo.css">
 </head>
 <body>
 
     
     <!-- MENU -->
-   <section id="header">
+  <section id="header">
     <div class="header">
-<<<<<<< HEAD
-      <div class="nav-bar">
-        <div class="brand">
-          <a href="../Vista/inicio.php">
-=======
-	<div class="brand">
-          <a href="../../indexPortada.php">
->>>>>>> 4fd7c7da344cd1875015b930969ea655bd1a35a4
+    <div class="brand">
+          <a href="inicio.php">
             <img src="../../imgindex/logo.png" alt="">
           </a>
         </div>
@@ -49,11 +46,11 @@
             <div class="bar"></div>
           </div>
           <ul>
-            <li><a href="" data-after="Inicio">Inicio</a></li>
-            <li><a href="" data-after="Productos">Productos</a></li>
-            <li><a href="" data-after="Informacion">Ayuda</a></li>
-            <li><a href="" data-after="Contactos">Informacion</a></li>
-            <li></li>
+            <li><a href="inicio.php" data-after="Inicio">Inicio</a></li>
+            <li><a href="#services" data-after="Informacion">Informacion</a></li>
+            <li><a href="#about" data-after="Productos">Productos</a></li>
+            <li><a href="#contact" data-after="Contactos">Contactos</a></li>
+            <li><a href="../Controlador/CerrarSesion.php" data-after="Inicio sesion/Registrarse">CerrarSesion</a></li>
           </ul>
         </div>
       </div>

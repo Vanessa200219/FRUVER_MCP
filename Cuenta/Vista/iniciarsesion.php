@@ -24,6 +24,9 @@
             <img class="img2" src="../../imgindex/logo.png" alt="">
         </a>
      </div>
+
+
+     
 <section class="general">
 <section class="lineal">
     <form method="POST" action="../Controlador/loginProceso.php">

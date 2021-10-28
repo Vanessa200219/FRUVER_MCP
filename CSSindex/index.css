@@ -51,7 +51,7 @@ a {
 
 
 .header {
-	min-height: 8vh;
+	min-height: 11vh;
 	background: #30C30C;
 	transition: 0.3s ease background-color;
     border-bottom: 1px #30C30C solid;

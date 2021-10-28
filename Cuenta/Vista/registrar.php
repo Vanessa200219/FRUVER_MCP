@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../CSSindex/Portada.css">
+    <link rel="stylesheet" href="../../CSSindex/index.css">
 	<link rel="stylesheet" href="../CSSCuenta/estilo.css">
     <title>Registrarse</title>
 </head>
@@ -14,7 +14,7 @@
   <section id="header">
     <div class="header">
 		<div class="brand">
-          <a href="../../Portada.php">
+          <a href="../../indexPortada.php">
             <img src="../../imgindex/logo.png" alt="">
           </a>
         </div>
@@ -74,7 +74,7 @@
 
 			<tr>
 				<td>Telefono: </td>
-				<td><input type="text" name="Telefono" minlength="10" maxlength="10" required></td>
+				<td><input type="text" name="Telefono" pattern="3" minlength="10" maxlength="10" required></td>
 			</tr>
 
       <tr>
