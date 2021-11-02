@@ -74,7 +74,7 @@
 
 			<tr>
 				<td>Telefono: </td>
-				<td><input type="text" name="Telefono" pattern="3" minlength="10" maxlength="10" required></td>
+				<td><input type="text" name="Telefono" pattern="3.+" minlength="10" maxlength="10" required></td>
 			</tr>
 
       <tr>

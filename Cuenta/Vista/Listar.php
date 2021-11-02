@@ -8,8 +8,8 @@
 		include '../Conexion/Conexion.php';
 		if (isset($_POST['btn2'])) {
 		
-		$numero=1000002891;
-		$sentencia = $bd->query("SELECT * FROM persona WHERE NumerodeDocumento = $numero");
+		
+		$sentencia = $bd->query("SELECT * FROM usuario WHERE Id_Usuario = 2");
 		$persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
 		}
 	}else{
@@ -17,7 +17,7 @@
 	}
 
 
-	
+	foreach ($persona as $dato) {}
 ?>
 
 <!DOCTYPE html>
@@ -73,14 +73,9 @@
 			<tr>
 				<td id="label">Nombres </td>
 				<td id="input">
-					<?php 
-						foreach ($persona as $dato) {
-					?>
-						<?php echo $dato->Nombres; ?>
 					
-					<?php
-						}
-					?>
+						<?php echo $dato->NNombres; ?>
+					
 				</td>
 			</tr>
 
@@ -88,28 +83,19 @@
 			<tr>
 				<td id="label">Apellidos </td>
 				<td id="input">
-					<?php 
-						foreach ($persona as $dato) {
-					?>
-						<?php echo $dato->Apellidos; ?>
 					
-					<?php
-						}
-					?>
+						<?php echo $dato->NApellidos; ?>
+					
+						
 				</td>
 			</tr>
 
 			<tr>
 				<td id="label">Tipo de Documento </td>
 				<td id="input">
-					<?php 
-						foreach ($persona as $dato) {
-					?>
-						<?php echo $dato->TipodeDocumento; ?>
 					
-					<?php
-						}
-					?>
+						<?php echo $dato->NTipodeDocumento; ?>
+						
 				</td>
 			</tr>
 
@@ -117,14 +103,9 @@
 			<tr>
 				<td id="label">Numero de Documento </td>
 				<td id="input">
-					<?php 
-						foreach ($persona as $dato) {
-					?>
-						<?php echo $dato->NumerodeDocumento; ?>
 					
-					<?php
-						}
-					?>
+						<?php echo $dato->NNumerodeDocumento; ?>
+						
 				</td>
 			</tr>
 
@@ -132,28 +113,19 @@
 			<tr>
 				<td id="label">Telefono </td>
 				<td id="input">
-					<?php 
-						foreach ($persona as $dato) {
-					?>
-						<?php echo $dato->Telefono; ?>
 					
-					<?php
-						}
-					?>
+						<?php echo $dato->NTelefono; ?>
+					
+						
 				</td>
 			</tr>
 
 			<tr>
 				<td id="label">Correo Electronico </td>
 				<td id="input">
-					<?php 
-						foreach ($persona as $dato) {
-					?>
-						<?php echo $dato->CorreoElectronico; ?>
 					
-					<?php
-						}
-					?>
+						<?php echo $dato->NCorreoElectronico; ?>
+						
 				</td>
 			</tr>
 
@@ -161,40 +133,25 @@
 			<tr>
 				<td id="label">Sexo </td>
 				<td id="input">
-					<?php 
-						foreach ($persona as $dato) {
-					?>
-						<?php echo $dato->Sexo; ?>
 					
-					<?php
-						}
-					?>
+						<?php echo $dato->NSexo; ?>
+						
 				</td>
 			</tr>
 
 			<tr>
 				<td id="label">Contraseña </td>
 				<td id="input">
-					<?php 
-						foreach ($persona as $dato) {
-					?>
-						<?php echo $dato->Contrasena; ?>
 					
-					<?php
-						}
-					?>
+						<?php echo $dato->NContrasena; ?>
+						
 				</td>
 			</tr>
 
 			<tr>
-				<?php 
-						foreach ($persona as $dato) {
-				?>
-					<td><a class="editar" href="Editar.php?id=<?php echo $dato->NumerodeDocumento; ?>">Editar</a></td>
-					<td><a class="eliminar" href="../Controlador/Eliminar.php?id=<?php echo $dato->NumerodeDocumento; ?>">Eliminar</a></td>
-				<?php
-					}
-				?>
+					<td><a class="editar" href="Editar.php?id=<?php echo $dato->NNumerodeDocumento; ?>">Editar</a></td>
+					<td><a class="eliminar" href="../Controlador/Eliminar.php?id=<?php echo $dato->NNumerodeDocumento; ?>">Eliminar</a></td>
+				
 			</tr>
 
 	</table>
