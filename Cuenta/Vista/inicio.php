@@ -48,7 +48,8 @@ foreach ($persona as $dato) { }
             <li><a href="inicio.php" data-after="Inicio">Inicio</a></li>
             <li><a href="" data-after="Ayuda">Ayuda</a></li>
             <li><a href="" data-after="Productos">Productos</a></li>
-            <li><form action="../Vista/Listar.php?id=<?php echo $dato->Id_Usuario; ?>" method="POST"><input type="submit" value="Datos" name="btn2"></form></li>
+            
+            <li><form action="../Vista/Listar.php?id=<?php foreach ($persona as $dato) { echo $dato->Id_Usuario;} ?>" method="POST"><input type="submit" value="Datos" name="btn2"></form></li>
             <li><a href="../Controlador/CerrarSesion.php" data-after="Inicio sesion/Registrarse">CerrarSesion</a></li>
           </ul>
         </div>

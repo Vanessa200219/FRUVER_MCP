@@ -7,9 +7,11 @@
 	{
 		include '../Conexion/Conexion.php';
 		if (isset($_POST['btn2'])) {
+			
+		$id = 1;
 		
 		
-		$sentencia = $bd->query("SELECT * FROM usuario WHERE Id_Usuario = 2");
+		$sentencia = $bd->query("SELECT * FROM usuario WHERE Id_Usuario = $id");
 		$persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
 		}
 	}else{
