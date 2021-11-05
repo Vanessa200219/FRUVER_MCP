@@ -12,6 +12,7 @@
 	if ($datos === FALSE) {
 		header('Location: ../Vista/iniciarsesion.php');
 	}elseif($sentencia->rowCount() == 1){
+		$_SESSION['NumerodeDocumento'] = $datos->NumerodeDocumento;
 		$_SESSION['Nombres'] = $datos->Nombres;
 		header('Location: ../Vista/inicio.php');
 	}

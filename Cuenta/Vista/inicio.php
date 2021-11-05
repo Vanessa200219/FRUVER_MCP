@@ -1,16 +1,21 @@
 <?php  
 	session_start();
-	if (!isset($_SESSION['Nombres'])) {
+
+	if (!isset($_SESSION['NumerodeDocumento'])) {
+
 		header('Location: iniciarsesion.php');
-	}elseif(isset($_SESSION['Nombres'])){
+
+	}elseif(isset($_SESSION['NumerodeDocumento'])){
+
 		include '../Conexion/Conexion.php';
 		$sentencia = $bd->query("SELECT * FROM usuario;");
 		$persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
+
 	}else{
 		echo "Error";
 	}
 
-foreach ($persona as $dato) { }
+
 	
 ?>
 
@@ -49,6 +54,15 @@ foreach ($persona as $dato) { }
             <li><a href="" data-after="Ayuda">Ayuda</a></li>
             <li><a href="" data-after="Productos">Productos</a></li>
             
+            <!-- <li>
+              <select name="" id="slec">
+                <option value=""></option>
+                <option value="">Perfil</option>
+                <option value="">Notificaciones</option>
+                <option value="">Cofiguraciones</option>
+                <option value="">Cerrar Sesíon</option>
+
+              </select></li> -->
             <li><form action="../Vista/Listar.php?id=<?php foreach ($persona as $dato) { echo $dato->Id_Usuario;} ?>" method="POST"><input type="submit" value="Datos" name="btn2"></form></li>
             <li><a href="../Controlador/CerrarSesion.php" data-after="Inicio sesion/Registrarse">CerrarSesion</a></li>
           </ul>
