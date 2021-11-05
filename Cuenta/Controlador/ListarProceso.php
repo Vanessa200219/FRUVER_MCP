@@ -146,14 +146,14 @@ $usu = $_SESSION['NumerodeDocumento'];
 				<td id="label">Contraseña </td>
 				<td id="input">
 					
-						<?php echo $key['Contrasena']; ?>
+					<a class="editar" href="../Vista/CambiarContraseña.php?id=<?php echo $key['NumerodeDocumento']; ?>">Cambiar Contraseña</a>
 						
 				</td>
 			</tr>
 
 
             <tr>
-					<td><a class="editar" href="../Vista/Editar.php?id=<?php echo $key['NumerodeDocumento']; ?>">Editar</a></td>
+					<td><a class="editar" href="../Vista/Editar.php?id=<?php echo $key['NumerodeDocumento']; ?>">Editar Perfil</a></td>
 					
 			</tr>
 

@@ -27,7 +27,7 @@
   <section id="header">
     <div class="header">
         <div class="brand">
-          <a href="inicio.php">
+          <a href="../../indexPortada.php">
             <img src="../../imgindex/logo.png" alt="">
           </a>
         </div>
@@ -38,10 +38,10 @@
             <div class="bar"></div>
           </div>
           <ul>
-            <li><a href="inicio.php" data-after="Inicio">Inicio</a></li>
+            <li><a href="#" data-after="Inicio">Inicio</a></li>
             <li><a href="#about" data-after="Productos">Productos</a></li>
             <li><a href="#services" data-after="Informacion">Ayuda</a></li>
-            <li><a href="inicio.php#contact" data-after="Contactos">Contactos</a></li>
+            <li><a href="#contact" data-after="Contactos">Contactos</a></li>
             <li></li>
           </ul>
         </div>
@@ -54,29 +54,24 @@
   <!-- Registrar -->
   <br><br><br><br><br><br><br><br>
     <div class="texto">
-      <h6>Modificar Perfil</h6>
+      <h6>Cambiar Contraseña</h6>
     </div>
 
-    <form class="form" method="POST" action="../Controlador/editarProceso.php">
+    <form class="form" method="POST" action="../Controlador/ProcesoContraseña.php">
         <table class="form__items">
 			<tr>
-				<td>Nombre: </td>
-				<td><input type="text" name="Nombres2" placeholder="Nombres" value="<?php echo $persona1->Nombres; ?>"></td>
+				<td>Antigua Contraseña: </td>
+				<td><input type="password" name="AntiguaContrasena" placeholder="Antigua Contraseña" value=""></td>
 			</tr>
 
 		    <tr>
-			  <td>Apellido: </td>
-				<td><input type="text" name="Apellidos2" placeholder="Apellidos" value="<?php echo $persona1->Apellidos; ?>"></td>
+			  <td>Nueva Contraseña: </td>
+				<td><input type="password" name="NuevaContrasena" placeholder="Nueva Contraseña" value=""></td>
 			</tr>
 
 			<tr>
-				<td>Telefono: </td>
-				<td><input type="text" name="Telefono2" minlength="10" maxlength="10" value="<?php echo $persona1->Telefono; ?>"></td>
-			</tr>
-
-            <tr>
-				<td>Email: </td>
-				<td><input type="text" name="CorreoElectronico2" pattern=".+@.+.com" placeholder="ejemplo@gmail.com" value="<?php echo $persona1->CorreoElectronico; ?>"></td>
+				<td>Confirme Contraseña: </td>
+				<td><input type="password" name="ConfirmeContrasena" placeholder="Confirme Contraseña" value=""></td>
 			</tr>
 
       
@@ -84,8 +79,8 @@
 
 
 			<tr>
-                    <input type="hidden" name="oculto">
-					<input type="hidden" name="id2" value="<?php echo $persona1->NumerodeDocumento ;?>">
+                    <input type="hidden" name="aceptar">
+					<input type="hidden" name="id3" value="<?php echo $persona1->NumerodeDocumento ;?>">
 					<td colspan="2"><input type="submit" value="Aceptar"></td>
 			</tr>
 		</table>

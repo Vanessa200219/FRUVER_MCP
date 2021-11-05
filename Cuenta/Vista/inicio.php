@@ -29,6 +29,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../CSSindex/index.css">
+  <link rel="stylesheet" href="../CSSCuenta/estilomenu2.css">
   <title>FRUVER MCP</title>
 </head>
 
@@ -53,18 +54,12 @@
             <li><a href="inicio.php" data-after="Inicio">Inicio</a></li>
             <li><a href="" data-after="Ayuda">Ayuda</a></li>
             <li><a href="" data-after="Productos">Productos</a></li>
-            
-            <!-- <li>
-              <select name="" id="slec">
-                <option value=""></option>
-                <option value="">Perfil</option>
-                <option value="">Notificaciones</option>
-                <option value="">Cofiguraciones</option>
-                <option value="">Cerrar Sesíon</option>
 
-              </select></li> -->
-            <li><form action="../Vista/Listar.php?id=<?php foreach ($persona as $dato) { echo $dato->Id_Usuario;} ?>" method="POST"><input type="submit" value="Datos" name="btn2"></form></li>
-            <li><a href="../Controlador/CerrarSesion.php" data-after="Inicio sesion/Registrarse">CerrarSesion</a></li>
+           
+
+
+            <li><form action="../Vista/Listar.php?id=<?php foreach ($persona as $dato) { echo $dato->Id_Usuario;} ?>" method="POST"><input class="boton" type="submit" value="Perfil" name="btn2"></form></li>
+            <li><a href="../Controlador/CerrarSesion.php" data-after="Inicio sesion/Registrarse">CerrarSesion</a></li> 
           </ul>
         </div>
       </div>

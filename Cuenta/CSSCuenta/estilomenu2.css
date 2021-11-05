@@ -1,0 +1,36 @@
+.usuario{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+
+.boton{
+    background: none;
+    border: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 20px;
+    display: block;
+}
+
+.boton:hover{
+    color: black;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+
+.texto{
+    font-size: 30px;
+    text-align: center;
+}

@@ -25,7 +25,7 @@
 
     <div>
         <a class="volver" href="../Vista/registrar.php">Volver</a>
-        <a class="inicio" href="../../Portada.php">Inicio</a>
+        <a class="inicio" href="../../indexPortada.php">Inicio</a>
     </div>
 </body>
 </html>
