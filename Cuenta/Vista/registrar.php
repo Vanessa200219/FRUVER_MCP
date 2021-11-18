@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSSindex/index.css">
-	<link rel="stylesheet" href="../CSSCuenta/estilo.css">
+	<link rel="stylesheet" href="../CSSCuenta/estilos.css">
     <title>Registrarse</title>
 </head>
 <body>
@@ -95,7 +95,7 @@
 
       <tr>
 				<td>Contraseña: </td>
-				<td><input type="password" name="Contrasena"></td>
+				<td><input type="password" name="Contrasena" minlength="5" maxlength="7" required></td>
 			</tr>
 
 

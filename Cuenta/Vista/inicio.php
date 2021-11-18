@@ -28,8 +28,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../CSSindex/index.css">
-  <link rel="stylesheet" href="../CSSCuenta/estilomenu2.css">
+  <link rel="stylesheet" href="../CSSCuenta/index.css">
+  <link rel="stylesheet" href="../CSSCuenta/perfil.css">
   <title>FRUVER MCP</title>
 </head>
 
@@ -52,16 +52,26 @@
           </div>
           <ul>
             <li><a href="inicio.php" data-after="Inicio">Inicio</a></li>
-            <li><a href="" data-after="Ayuda">Ayuda</a></li>
+            <li><a href="Ayuda.php" data-after="Ayuda">Ayuda</a></li>
             <li><a href="" data-after="Productos">Productos</a></li>
-
-           
-
-
-            <li><form action="../Vista/Listar.php?id=<?php foreach ($persona as $dato) { echo $dato->Id_Usuario;} ?>" method="POST"><input class="boton" type="submit" value="Perfil" name="btn2"></form></li>
-            <li><a href="../Controlador/CerrarSesion.php" data-after="Inicio sesion/Registrarse">CerrarSesion</a></li> 
           </ul>
         </div>
+
+            <div class="dropdown">
+            
+              <input  type="buttom" onclick="myFunction()" class="dropbtn" style="background-image:url('https://img.icons8.com/ios-filled/50/000000/cat-profile.png')">
+              <span class="caret"></span>
+              <div id="myDropdown" class="dropdown-content">
+                <form action="../Vista/Listar.php" method="POST"><input class="perfil" type="submit" value="Perfil" name="btn2"></form>
+                <a href="">Mis Compras</a>
+                <a href="">Favoritos</a>
+                <a href="">Privacidad</a>
+                <a href="" class="historial">Notificaciones</a>
+                <a class="" href="#contact">Contactos</a>
+                <a class="salir" href="../Controlador/CerrarSesion.php">Salir</a>
+              </div>
+            </div>
+
       </div>
     </div>
   </section>
@@ -70,7 +80,6 @@
 
 
   <!-- PORTADA  -->
-
   <section id="hero">
     <div class="hero container">
       <div>
@@ -208,7 +217,7 @@
       <div class="col-left">
 
         <div class="about-img">
-          <img src="imgindex/frutasyverduras.jpg" alt="imagenes">
+          <img src="../../imgindex/frutasyverduras.jpg" alt="imagenes">
         </div>
 
       </div>
@@ -288,15 +297,15 @@
       <div class="social-icon">
 
         <div class="social-item">
-          <a href="#"><img src="https://img.icons8.com/ios/50/4a90e2/facebook-new.png"/></a>
+          <a href="https://www.facebook.com/profile.php?id=100074625857357"><img src="https://img.icons8.com/ios/50/4a90e2/facebook-new.png"/></a>
         </div>
 
         <div class="social-item">
-          <a href="#"><img src="https://img.icons8.com/ios/50/fa314a/instagram-new.png"/></a>
+          <a href="https://www.instagram.com/frucer_mcp/"><img src="https://img.icons8.com/ios/50/fa314a/instagram-new.png"/></a>
         </div>
 
         <div class="social-item">
-          <a href="#"><img src="https://img.icons8.com/ios/50/4a90e2/twitter--v1.png"/></a>
+          <a href="https://twitter.com/FruverMcp"><img src="https://img.icons8.com/ios/50/4a90e2/twitter--v1.png"/></a>
         </div>
 
         <div class="social-item">
@@ -305,7 +314,12 @@
       
   </section>
   <!-- FIN FOOTER -->
+
+
+
+  
   <script src="../../indexJava/app.js"></script>
+  <script src="../java/index.js"></script>
 </body>
 
 </html>

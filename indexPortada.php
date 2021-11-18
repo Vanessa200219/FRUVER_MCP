@@ -257,15 +257,15 @@
       <div class="social-icon">
 
         <div class="social-item">
-          <a href="#"><img src="https://img.icons8.com/ios/50/4a90e2/facebook-new.png"/></a>
+          <a href="https://www.facebook.com/profile.php?id=100074625857357"><img src="https://img.icons8.com/ios/50/4a90e2/facebook-new.png"/></a>
         </div>
 
         <div class="social-item">
-          <a href="#"><img src="https://img.icons8.com/ios/50/fa314a/instagram-new.png"/></a>
+          <a href="https://www.instagram.com/frucer_mcp/"><img src="https://img.icons8.com/ios/50/fa314a/instagram-new.png"/></a>
         </div>
 
         <div class="social-item">
-          <a href="#"><img src="https://img.icons8.com/ios/50/4a90e2/twitter--v1.png"/></a>
+          <a href="https://twitter.com/FruverMcp"><img src="https://img.icons8.com/ios/50/4a90e2/twitter--v1.png"/></a>
         </div>
 
         <div class="social-item">

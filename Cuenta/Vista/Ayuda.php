@@ -1,29 +1,40 @@
 <?php  
-	include '../Conexion/Conexion.php';
-		$id = $_GET['id'];
+	session_start();
 
-		$sentencia = $bd->prepare("SELECT * FROM persona WHERE NumerodeDocumento = ?;");
-		$sentencia->execute([$id]);
-		$persona1 = $sentencia->fetch(PDO::FETCH_OBJ);
+	if (!isset($_SESSION['NumerodeDocumento'])) {
 
+		header('Location: iniciarsesion.php');
+
+	}elseif(isset($_SESSION['NumerodeDocumento'])){
+
+		include '../Conexion/Conexion.php';
+		$sentencia = $bd->query("SELECT * FROM usuario;");
+		$persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
+
+	}else{
+		echo "Error";
+	}
+
+
+	
 ?>
 
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSSCuenta/index.css">
     <link rel="stylesheet" href="../CSSCuenta/perfil.css">
-    <link rel="stylesheet" href="../CSSCuenta/informacion.css">
-    <title>Modificacion Informacion</title>
+    <link rel="stylesheet" href="../CSSCuenta/ayuda.css">
+    <title>Ayuda</title>
 </head>
 <body>
-    
-  <!-- MENU -->
+
+<!-- MENU -->
   
   <section id="header">
     <div class="header">
@@ -41,7 +52,6 @@
           </div>
           <ul>
             <li><a href="inicio.php" data-after="Inicio">Inicio</a></li>
-            <li><a href="Ayuda.php" data-after="Ayuda">Ayuda</a></li>
             <li><a href="" data-after="Productos">Productos</a></li>
           </ul>
         </div>
@@ -65,55 +75,39 @@
     </div>
   </section>
 
-  <!-- FIN DE MENU -->  
+<!-- FIN DE MENU -->
+    
 
 
-  <!-- Editar Datos -->
-<section class="modulo_editar">
 
+<!-- SECCION DE REALIZAR PREGUNTAS -->
 
-    <div class="texto">
-      <h6>Modificar Perfil</h6>
+<form action="">
+  <section class="ayuda">
+
+    <div class="saludo">
+        <span>Hola <?php echo $_SESSION['Nombres']?>,</span>
     </div>
 
-    <form class="form" method="POST" action="../Controlador/editarProceso.php">
-
-        <table class="form__items">
-
-			    <tr>
-				    <td class="editar_items">Nombre: </td>
-				    <td id="campo_items"><input type="text" name="Nombres2" placeholder="Nombres" value="<?php echo $persona1->Nombres; ?>"></td>
-			    </tr>
-
-		      <tr>
-			      <td class="editar_items">Apellido: </td>
-				    <td><input type="text" name="Apellidos2" placeholder="Apellidos" value="<?php echo $persona1->Apellidos; ?>"></td>
-			    </tr>
-
-			    <tr>
-				    <td class="editar_items">Telefono: </td>
-				    <td><input type="text" name="Telefono2" minlength="10" maxlength="10" value="<?php echo $persona1->Telefono; ?>"></td>
-			    </tr>
-
-          <tr>
-				    <td class="editar_items">Email: </td>
-				    <td><input type="text" name="CorreoElectronico2" pattern=".+@.+.com" placeholder="ejemplo@gmail.com" value="<?php echo $persona1->CorreoElectronico; ?>"></td>
-			    </tr>
-
-      
+    <div class="general"> 
+        <p>¿Como te podemos ayudar?</p>
+    </div>
 
 
+    <div class="pregunta">
+        <span>Escribe aqui tu Pregunta</span>
+        <input type="text" placeholder="Pregunta">
+        <input type="submit" value="Enviar">
+    </div>
 
-			    <tr >
-            <input type="hidden" name="oculto">
-					  <input type="hidden" name="id2" value="<?php echo $persona1->NumerodeDocumento ;?>">
-					  <td><input id="submit" type="submit" value="Aceptar"></td>
-			  </tr>
-		  </table>
-	  </form>
 
-</section>
-  
+    <div class="frecuentes">
+        <a href="">Preguntas Frecuentes</a>
+    </div>
+  </section>
+</form>
+
+<!-- FIN SECCION PREGUNTAS -->
 
 
   <!-- FOOTER -->
@@ -148,9 +142,9 @@
   </section>
   <!-- FIN FOOTER -->
 
-  <script src="../../indexJava/app.js"></script>
-  
-	
-	<script src="../java/index.js"></script>
+
+
+<script src="../../indexJava/app.js"></script>
+<script src="../java/index.js"></script>
 </body>
 </html>

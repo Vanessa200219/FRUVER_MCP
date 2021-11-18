@@ -173,99 +173,50 @@ input[type="submit"]{
 }
 
 
-/* Informacion Personal */
-
-
-
-.tittle{
-    text-align: left;
-    margin-left: 30%;
-    padding: 20px;
-    margin-bottom: 20px;
-    font-size: 18px;
-    color: black;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-
-}
-
-.contenedor{
-    box-align: left;
-    margin: 12px;
-    margin-left: 20%;
-    position: relative;
-    width: 50%;
-    max-width: auto;
-    border-radius: 3px;
-    box-shadow: rgb(9 30 66 / 25%) 0px 1px 1px, rgb(9 30 66 / 13%) 0px 0px 1px 1px;
-}
-
-
-.information{
-    background-color: #fff;
-    border-radius: 0 0 8px 8px;
-    border-top: 1px solid #dadde1;
-    color: #1c1e21;
-    line-height: 1.34;
-    margin: auto;
-    width: 100%;
-    padding: 5%;
-    margin-bottom: 12px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#label{
-    color: black;
-    width: 40%;
-    padding: 1%;
-    text-align: left;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-
-#input{
-    width: 100%;
-    font-size: 15px;
-    color: black;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-
-#input:hover{
-    transition: color .12s ease-out 0s;
-    color: green;
-}
-
-
-/* Fin Imformacion Personal */
 
 
 
 /* Logueo inicio de sesion */
 
+.general{
+    padding: 5%;
+	z-index: 1;
+    
+}
+
+
 .logo{
-    float: left;
-    margin-left: 5%;
-    margin-top: 15%;
-    position: relative;
-    display: block;
-    border: none;
-    width:40%;
+    text-align: center;
+    width:auto;
     
     
 }
 
 .img2{
-    float: left;
-    width: 90%;
+    width: 40%;
     height: 150%;
     
 }
 
-.general{
-    margin-top: 8%;
-    float: left;
-    margin-left: 5%;
+
+.sesion{
+    width: auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center
+
+}
+
+
+
+.iniciar{
+    border: rgb(2, 122, 2) 2px solid;
+    width: 50%;
+    max-width: auto;
+    padding-top: 20px;
+    text-align: center;
+    box-shadow: green 0px 3px 15px 4px;
 }
 
 .lineal{
@@ -291,7 +242,7 @@ input[type="submit"]{
     color: #1c1e21;
     direction: ltr;
     line-height: 1.34;
-    width: 90%;
+    width: 67%;
 }
 
 

@@ -10,9 +10,6 @@ $usu = $_SESSION['NumerodeDocumento'];
     }elseif(isset($_SESSION['NumerodeDocumento'])){
         
 		include_once( '../Conexion/Conexion.php');
-
-        
-		if (isset($_POST['btn2'])) {
 			
 		    $statement = $bd->prepare("SELECT * FROM persona WHERE NumerodeDocumento = $usu");
 	        $statement->execute();
@@ -207,7 +204,6 @@ $usu = $_SESSION['NumerodeDocumento'];
 
             <?php
             }}
-            }
             ?>
 
 
