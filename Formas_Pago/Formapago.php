@@ -38,28 +38,26 @@ require("../../FRUVER_MCP/Cuenta/Conexion/Conexion.php");
             </div>
         </div>
     </section>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div>
+    <br> <br> <br> <br> <br> <br> <br> <br>
+    <div class="Titulo">
         <h1><center>SELECCIONE METODO DE PAGO</center></h1>
     </div>
-    <div>
-        <a href="tarjeta_credito.php"><img src="../Formas_Pago/img/tarjeta_credito.png" alt="MDN"></a>
-        <h3>Tarjeta de Credito</h3>
+    <div class="metodopago">
+        <a href="tarjeta_credito.php"><img src="../Formas_Pago/img/tarjeta_credito.png" alt="MDN" class="img"></a>
+        <br><br><br>
+        <h3 class="metodo">Tarjeta de Credito</h3>
     </div>
-    <div>
-        <a href=""><img src="../Formas_Pago/img/tarjeta_debito.png" alt="MDN"></a>
-        <h3>Tarjeta Debito</h3>
+    <div class="metodopago">
+        <a href="tarjeta_debito.php"><img src="../Formas_Pago/img/tarjeta_debito.png" alt="MDN" class="img"></a>
+        <h3 class="metodo1">Tarjeta Debito</h3>
     </div>
-    <div>
-        <a href=""><img src="../Formas_Pago/img/efecty.png" alt="MDN"></a>
-        <h3>Punto de Efecty</h3>
+    <div class="metodopago">
+        <a href="efecty.php"><img src="../Formas_Pago/img/efecty.png" alt="MDN" class="img"></a>
+        <h3 class="metodo2">Punto de Efecty</h3>
     </div>
-    <div>
-        <a href=""><img src="../Formas_Pago/img/contrareembolso.png" alt="MDN"></a>
-        <h3>Contra Reembolso</h3>
+    <div class="metodopago">
+        <a href="contrareembolso.php"><img src="../Formas_Pago/img/contrareembolso.png" alt="MDN" class="img"></a>
+        <h3 class="metodo3">Contra Reembolso</h3>
     </div>
 </body>
 </html>
