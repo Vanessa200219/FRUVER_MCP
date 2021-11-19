@@ -13,7 +13,7 @@
   <section id="header">
     <div class="header">
     <div class="brand">
-          <a href="indexPortada.php">
+          <a href="index.php">
             <img src="imgindex/logo.png" alt="">
           </a>
         </div>

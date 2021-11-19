@@ -1,7 +1,8 @@
 <?php  
 
 		include 'model/conexion.php';
-		$sentencia = $bd->query("SELECT * FROM persona;");
+		$sentencia = $bd->query("SELECT * FROM persona INNER JOIN roles ON persona.id_rol = roles.Id WHERE id_rol IN (3,5);");
+		// $sentencia = $bd->query("SELECT * FROM persona WHERE id_rol IN (3,5);");
 		$usuarios = $sentencia->fetchAll(PDO::FETCH_OBJ);
 		//print_r($productos);
 	
@@ -14,17 +15,55 @@
 <head>
 	<title>LISTA DE USUARIOS REGISTRADOS</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="CSS/tabla.css">
+	<link rel="stylesheet" href="CSS/estilo.css">
+  	<link rel="stylesheet" href="../CuentaAdmi/CSS/index.css">
+  	<link rel="stylesheet" href="../CuentaAdmi/CSS/perfil.css">
 </head>
 <body>
 
-    <!-- HEADER DE RUTAS Y DESCARGAS -->
-    <div id="header">
-            
-        <a class="return  header" href="">INICIO</a>
+  <!-- MENU -->
+  
+  <section id="header">
+    <div class="header">
+      
+        <div class="brand">
+          <a href="../CuentaAdmi/Vista/inicio.php">
+            <img src="../../imgindex/logo.png" alt="">
+          </a>
+        </div>
+      <div class="nav-bar">
+        
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="../CuentaAdmi/Vista/inicio.php" data-after="Inicio">Inicio</a></li>
+            <li><a href="" data-after="Ayuda">Buzon de Ayuda</a></li>
+            <li><a href="index.php" data-after="Productos">Empleados</a></li>
+          </ul>
+        </div>
 
+            <div class="dropdown">
+            
+              <input  type="buttom" onclick="myFunction()" class="dropbtn" style="background-image:url('https://img.icons8.com/ios-filled/50/000000/cat-profile.png')">
+              <span class="caret"></span>
+              <div id="myDropdown" class="dropdown-content">
+                <form action="../CuentaAdmi/Vista/listar.php" method="POST"><input class="perfil" type="submit" value="Perfil" name="btn2"></form>
+                <a href="">Categorias</a>
+                <a href="">Productos</a>
+                <a href="">Formas de Pago</a>
+                <a href="" class="historial">Proveedores</a>
+                <a class="" href="">Facturas</a>
+                <a class="salir" href="../../Cuenta/Controlador/CerrarSesion.php">Salir</a>
+              </div>
+            </div>
+
+      </div>
     </div>
-   <!-- FIN DE HEADER RUTAS Y DESCARGAS -->
+  </section>
+
+  <!-- FIN DE MENU -->
 
 	<center>
 		<div class="div__firmts">
@@ -34,15 +73,9 @@
 			<tr class="td__tittle">
 				<td>Nombres</td>
 				<td>Apellidos</td>
-				<td>Tipo de Documento</td>
 				<td>Numero de Documento</td>
-				<td>Telefono</td>
-				<td>Correo</td>
-                <td>Sexo</td>
-				<td>Contraseña</td>
                 <td>ID Rol</td>
-				<td>Editar</td>
-				<td>Eliminar</td>
+				<td>Empleados</td>
 			</tr>
 			</tbody>
 			<?php 
@@ -51,15 +84,10 @@
 					<tr class="content">
 						<td><?php echo $dato->Nombres; ?></td>
 						<td><?php echo $dato->Apellidos; ?></td>
-						<td><?php echo $dato->TipodeDocumento; ?></td>
 						<td><?php echo $dato->NumerodeDocumento; ?></td>
-						<td><?php echo $dato->Telefono; ?></td>
-						<td><?php echo $dato->CorreoElectronico; ?></td>
-                        <td><?php echo $dato->Sexo; ?></td>
-						<td><?php echo $dato->Contrasena; ?></td>
-						<td><?php echo $dato->id_rol; ?></td>
-						<td><a class="editar" href="editar.php?id=<?php echo $dato->NumerodeDocumento; ?>">Editar</a></td>
-						<td><a class="eliminar" href="eliminar.php?id=<?php echo $dato->NumerodeDocumento; ?>">Eliminar</a></td>
+						<td><?php echo $dato->Rol; ?></td>
+						<td><a class="editar" href="editar.php?id=<?php echo $dato->NumerodeDocumento; ?>">Ver más</a></td>
+						<!-- <td><a class="eliminar" href="eliminar.php?id=<?php echo $dato->NumerodeDocumento; ?>">Eliminar</a></td> -->
 					</tr>
 					<?php
 				}
@@ -86,7 +114,6 @@
             <select name="txtTipodeDocumento" id="" required>
 					    <option value=""></option>
 					    <option value="1">C.C</option>
-					    <option value="2">T.I</option>
 					    <option value="3">C.E</option>
 				    </select>
                  </td>
@@ -122,10 +149,9 @@
 				 <td>
                       <select name="txtRol" id="" required>
 					   <option value=""></option>
-					   <option value="1">1</option>
-					   <option value="2">2</option>
-                       <option value="3">3</option>
-                       <option value="4">4</option>
+					   <option value="3">Vendedores</option>
+					   <option value="5">Domiciliarios</option>
+                       <option value="6">Administrador</option>
 				      </select>
                 </td>
 			</tr>
@@ -142,5 +168,9 @@
 		
 
 	</center>
+
+
+	<script src="../../indexJava/app.js"></script> 
+	<script src="../CuentaAdmi/Java/index.js"></script>
 </body>
 </html>

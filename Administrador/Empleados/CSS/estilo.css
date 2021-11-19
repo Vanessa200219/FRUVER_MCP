@@ -25,57 +25,10 @@ body{
   background-size: cover;
 }
 
-/* HEADER DE RUTAS Y DESCARGAS */
-#header{
-    position: relative;
-    z-index: 1;
-    padding-top: 0;
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 30px 0;
-    border-bottom: gray 1px solid;
-    background-color: rgb(146, 66, 84);
-}
-
-
-.return{
-    margin-left: 10px;
-    float: left;
-    color: white;
-    display: flex;
-    justify-content: flex-start;
-    font-size: 20px;
-}
-
-
- .return:hover{
-    
-	color: rgb(196, 18, 18);
-}
-
-.products{
-    margin-right: 10px;
-    float: right;
-    color: white;
-    display: flex;
-    justify-content: flex-start;
-    font-size: 20px;
-}
-
-
- .products:hover{
-    
-	color: rgb(196, 18, 18);
-}
-
-
-
-/* FIN HEADER DE RUTAS Y DESCARGAS */
-
 
 .div__firmts{
     position:static;
-    padding: 2%;
+    padding-top: 12%;
     width: auto;
     max-width: auto;
 }
@@ -88,15 +41,15 @@ h3{
 
 
 .table__1{
-    width: auto;
+    width: 100%;
     max-width: auto;
-    margin: 15px;
-    padding: 15px;
+    margin: 5px;
+    padding: 5px;
 }
 
 .td__tittle{
-    font-size: 18px;
-    background-color: rgb(146, 66, 84);
+    font-size: 15px;
+    background-color: #30C30C;
     color: white;
     
     position:relative;
@@ -115,26 +68,20 @@ tbody {
 }
 
 .content{
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .editar{
-    background: rgb(42, 190, 216);
-    border-radius: 6px;
     color: black;
     padding: 6px;
-    border:white 1px solid;
+    border:none;
     font-family: 'Times New Roman', Times, serif;
 }
 
 
-.eliminar{
-    background: red;
-    border-radius: 6px;
-    color: black;
-    padding: 6px;
-    border:white 1px solid;
-    font-family: 'Times New Roman', Times, serif;
+.editar:hover{
+    color: green;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 
@@ -168,7 +115,7 @@ form{
 
 
 
-input{
+table input{
     margin-left: 12px;
     justify-content: flex-start;
     margin-top: 23px;
@@ -184,7 +131,7 @@ input{
 }
 
 
-input[type="submit"]{
+table input[type="submit"]{
     position: right;
     margin-right: 12px;
     background: rgb(51, 179, 51);
@@ -198,19 +145,26 @@ input[type="submit"]{
     border-radius: 4px;
     transition: all .2s cubic-bezier(.83,.9,.68,.73);
 }
-select{
-    position: right;
-    margin-left: 12px;
-    font-style: unset;
-    color: black;
-    font-size: 16px;
-    width: 220px;
-    margin-bottom: 20px;
-    padding: 12px;
-    border: 1px solid green;
-    border-radius: 4px;
-    transition: all .2s cubic-bezier(.83,.9,.68,.73);
+
+
+table input[type="submit"]:hover{
+    background: green;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 
+table select{
+    margin-left: 12px;
+    justify-content: flex-start;
+    margin-top: 23px;
+    font-style: unset;
+    color: rgb(26, 24, 23);
+    font-size: 16px;
+    width: 71%;
+    padding: 11px;
+    border: 1px solid #0a0a0a59;
+    border-radius: 4px;
+    background: #fff;
+    transition: all .2s cubic-bezier(.83,.9,.68,.73);
+}
 /* FIN FORMULARIO */

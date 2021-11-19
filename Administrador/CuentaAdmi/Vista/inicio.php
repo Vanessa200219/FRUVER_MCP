@@ -34,6 +34,7 @@
 </head>
 
 <body>
+
   <!-- MENU -->
   
   <section id="header">
@@ -52,8 +53,8 @@
           </div>
           <ul>
             <li><a href="inicio.php" data-after="Inicio">Inicio</a></li>
-            <li><a href="Ayuda.php" data-after="Ayuda">Buzon de Ayuda</a></li>
-            <li><a href="" data-after="Productos">Empleados</a></li>
+            <li><a href="" data-after="Ayuda">Buzon de Ayuda</a></li>
+            <li><a href="../../Empleados/" data-after="Productos">Empleados</a></li>
           </ul>
         </div>
 
@@ -62,7 +63,7 @@
               <input  type="buttom" onclick="myFunction()" class="dropbtn" style="background-image:url('https://img.icons8.com/ios-filled/50/000000/cat-profile.png')">
               <span class="caret"></span>
               <div id="myDropdown" class="dropdown-content">
-                <form action="../Vista/.php" method="POST"><input class="perfil" type="submit" value="Perfil" name="btn2"></form>
+                <form action="listar.php" method="POST"><input class="perfil" type="submit" value="Perfil" name="btn2"></form>
                 <a href="">Categorias</a>
                 <a href="">Productos</a>
                 <a href="">Formas de Pago</a>
