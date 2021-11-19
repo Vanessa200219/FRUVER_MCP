@@ -21,7 +21,7 @@
 <section class="general">
 
     <div class="logo">
-        <a href="../../indexPortada.php">
+        <a href="../../index.php">
         <img class="img2" src="../../imgindex/logo.png" alt="">
         </a>
      </div>
