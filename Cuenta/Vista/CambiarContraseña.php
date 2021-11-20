@@ -1,10 +1,21 @@
 <?php  
+
+
+session_start();
+
+
+if (!isset($_SESSION['NumerodeDocumento'])) {
+
+	header('Location: iniciarsesion.php');
+
+}elseif(isset($_SESSION['NumerodeDocumento'])){
 	include '../Conexion/Conexion.php';
 		$id = $_GET['id'];
 
 		$sentencia = $bd->prepare("SELECT * FROM persona WHERE NumerodeDocumento = ?;");
 		$sentencia->execute([$id]);
 		$persona1 = $sentencia->fetch(PDO::FETCH_OBJ);
+}
 
 ?>
 

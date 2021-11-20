@@ -1,5 +1,5 @@
 <?php  
-	include 'model/conexion.php';
+	include '../model/conexion.php';
 		$id = $_GET['id'];
 
 		$sentencia = $bd->prepare("SELECT * FROM persona WHERE NumerodeDocumento = ?;");

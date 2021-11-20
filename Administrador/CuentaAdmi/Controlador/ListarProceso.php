@@ -5,7 +5,7 @@ $usu = $_SESSION['NumerodeDocumento'];
 
 	if (!isset($_SESSION['NumerodeDocumento'])) {
 
-		header('Location: ../Vista/iniciarsesion.php');
+		header('Location: ../../../Cuenta/Vista/iniciarsesion.php');
     
     }elseif(isset($_SESSION['NumerodeDocumento'])){
         

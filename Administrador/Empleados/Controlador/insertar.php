@@ -3,7 +3,9 @@
 		exit();
 	}
 
-	include 'model/conexion.php';
+	include '../model/conexion.php';
+
+	try {
 
 	$nombres = $_POST['txtNombres'];
 	$apellidos = $_POST['txtApellidos'];
@@ -18,9 +20,15 @@
     $sentencia = $bd->prepare("INSERT INTO persona(Nombres,Apellidos,TipodeDocumento,NumerodeDocumento,Telefono,CorreoElectronico,Sexo,Contrasena,id_rol) VALUES (?,?,?,?,?,?,?,?,?);");
 	$resultado = $sentencia->execute([$nombres,$apellidos,$tipodoc,$numDoc,$telefono,$correo,$sexo,$contrasena,$id_rol]);
 
+
+} catch(PDOException) {
+	echo '<script language="javascript">alert("Error .... El documento ya existe");window.location.href="index.php"</script>';
+    
+}
+
 	if ($resultado === TRUE) {
 		//echo "Insertado correctamente";
-		header('Location: index.php');
+		header('Location: ../index.php');
 	}else{
 		echo "Error";
 	}

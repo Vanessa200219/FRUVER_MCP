@@ -4,7 +4,7 @@
 		header('Location: index.php');
 	}
 
-	include '../Conexion/Conexion.php';
+	include '../model/conexion.php';
 	$id2 = $_POST['id2'];
     $nombre2=$_POST['Nombres2'];
     $apellido2=$_POST['Apellidos2'];
@@ -17,7 +17,7 @@
 	$resultado = $sentencia->execute([$nombre2,$apellido2,$telefon2,$email2,$contrasena2, $id2]);
 
 	if ($resultado === TRUE) {
-        header('Location: index.php');
+        header('Location: ../index.php');
 
 	}else{
 		echo "Error";
