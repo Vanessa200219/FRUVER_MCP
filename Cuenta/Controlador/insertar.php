@@ -33,7 +33,7 @@ if ($resultado === TRUE) {
     //echo "Insertado correctamente";
     header('Location: ../Vista/iniciarsesion.php');
 }else{
-    echo "Error";
+    header('Location:../Vista/Error.php');
 }
 
 

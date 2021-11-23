@@ -14,7 +14,7 @@
   <section id="header">
     <div class="header">
 		<div class="brand">
-          <a href="../../indexPortada.php">
+          <a href="../../index.php">
             <img src="../../imgindex/logo.png" alt="">
           </a>
         </div>
@@ -25,10 +25,9 @@
             <div class="bar"></div>
           </div>
           <ul>
-            <li><a href="../../indexPortada.php" data-after="Inicio">Inicio</a></li>
-            <li><a href="../../indexPortada.php#about" data-after="Productos">Productos</a></li>
-            <li><a href="" data-after="Informacion">Ayuda</a></li>
-            <li><a href="../../indexPortada.php#contact" data-after="Contactos">Contactos</a></li>
+            <li><a href="../../index.php" data-after="Inicio">Inicio</a></li>
+            <li><a href="../../index.php#about" data-after="Productos">Productos</a></li>
+            <li><a href="../../index.php#contact" data-after="Contactos">Contactos</a></li>
             <li></li>
           </ul>
         </div>
@@ -47,7 +46,7 @@
     <table class="form__items">
 			<tr>
 				<td>Nombre: </td>
-				<td><input type="text" name="Nombres" placeholder="Nombres" required></td>
+				<td><input type="text" name="Nombres" placeholder="Nombres" required="Escriba un nombre"></td>
 			</tr>
 
 		  <tr>
@@ -57,14 +56,14 @@
 
 			<tr>
 				<td>Tipo de Documento: </td>
-				  <td>
-            <select name="TipodeDocumento" id="" required>
+				<td>
+            		<select name="TipodeDocumento" id="" required>
 					    <option value=""></option>
 					    <option value="1">C.C</option>
 					    <option value="2">T.I</option>
 					    <option value="3">C.E</option>
 				    </select>
-          </td>
+          		</td>
 			</tr>
 
 			<tr>
@@ -77,25 +76,25 @@
 				<td><input type="text" name="Telefono" pattern="3.+" minlength="10" maxlength="10" required></td>
 			</tr>
 
-      <tr>
+     		 <tr>
 				<td>Email: </td>
-				<td><input type="text" name="CorreoElectronico" pattern=".+@.+.com" placeholder="ejemplo@gmail.com" required></td>
+				<td><input type="text" name="CorreoElectronico" pattern=".+@.+.com"  placeholder="ejemplo@gmail.com" required></td>
 			</tr>
 
-      <tr>
+      		<tr>
 				<td>Sexo: </td>
 				<td>
-          <select name="Sexo" id="" required>
+          			<select name="Sexo" id="" required>
 					  <option value=""></option>
 					  <option value="1">F</option>
 					  <option value="2">M</option>
-				  </select>
-        </td>
+				  	</select>
+        		</td>
 			</tr>
 
-      <tr>
+      		<tr>
 				<td>Contraseña: </td>
-				<td><input type="password" name="Contrasena" minlength="5" maxlength="7" required></td>
+				<td><input type="password" name="Contrasena" minlength="4" maxlength="8" required></td>
 			</tr>
 
 

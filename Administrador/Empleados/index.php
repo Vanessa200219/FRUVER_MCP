@@ -22,7 +22,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>LISTA DE USUARIOS REGISTRADOS</title>
+	<title>Empledos</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="CSS/estilo.css">
 	<link rel="stylesheet" href="CSS/Buscador.css">
@@ -119,7 +119,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 							<td><?php echo $dato['Apellidos']; ?></td>
 							<td><?php echo $dato['NumerodeDocumento']; ?></td>
 							<td><?php echo $dato['Rol']; ?></td>
-							<td><a class="editar" href="Vista/editar.php?id=<?php echo $dato['NumerodeDocumento']; ?>">Ver más</a></td>
+							<td><a class="editar" href="Vista/empleado.php?id=<?php echo $dato['NumerodeDocumento']; ?>">Ver más</a></td>
 						</tr>
 			
 					</table>
@@ -155,7 +155,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 						<td><?php echo $dato->Apellidos; ?></td>
 						<td><?php echo $dato->NumerodeDocumento; ?></td>
 						<td><?php echo $dato->Rol; ?></td>
-						<td><a class="editar" href="Vista/editar.php?id=<?php echo $dato->NumerodeDocumento; ?>">Ver más</a></td>
+						<td><a class="editar" href="Vista/empleado.php?id=<?php echo $dato->NumerodeDocumento; ?>">Ver más</a></td>
 					</tr>
 					<?php
 				}
@@ -239,7 +239,6 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 							<option value=""></option>
 							<option value="3">Vendedores</option>
 					   		<option value="5">Domiciliarios</option>
-                       		<option value="6">Administrador</option>
 				      	</select>
                 	</td>
 				</tr>

@@ -22,13 +22,28 @@
 
 
 } catch(PDOException) {
-	echo '<script language="javascript">alert("Error .... El documento ya existe");window.location.href="index.php"</script>';
+	echo '<script language="javascript">alert("Error .... El documento ya existe");window.location.href="../index.php"</script>';
     
 }
 
 	if ($resultado === TRUE) {
 		//echo "Insertado correctamente";
-		header('Location: ../index.php');
+		// header('Location: ../Vista/vendedor.php');
+
+		if (isset($id_rol)) {
+			switch ($id_rol) {
+				case 3:
+					header('Location: ../Vista/vendedor.php');
+					break;
+	
+				case 5:
+					header('Location: ../Vista/domiciliario.php');
+					break;
+				
+				default:
+				
+			}
+		}
 	}else{
 		echo "Error";
 	}
