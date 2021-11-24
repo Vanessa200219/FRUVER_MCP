@@ -33,11 +33,11 @@
 		if (isset($id_rol)) {
 			switch ($id_rol) {
 				case 3:
-					header('Location: ../Vista/vendedor.php');
+					header('Location: ../Vista/vendedor.php?id='.$numDoc);
 					break;
 	
 				case 5:
-					header('Location: ../Vista/domiciliario.php');
+					header('Location: ../Vista/domiciliario.php?id='.$numDoc);
 					break;
 				
 				default:

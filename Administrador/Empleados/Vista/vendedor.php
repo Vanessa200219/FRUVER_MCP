@@ -1,3 +1,20 @@
+<?php  
+
+session_start();
+
+
+if (!isset($_SESSION['NumerodeDocumento'])) {
+
+	header('Location: ../../../Cuenta/Vista/iniciarsesion.php');
+
+}elseif(isset($_SESSION['NumerodeDocumento'])){
+
+	
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +37,7 @@
     <div class="header">
       
         <div class="brand">
-          <a href="../CuentaAdmi/Vista/inicio.php">
+          <a href="../../CuentaAdmi/Vista/inicio.php">
             <img src="../../../imgindex/logo.png" alt="">
           </a>
         </div>
@@ -73,12 +90,12 @@
     <table id="table_vendedor">
         <tr>
             <td>Carnet de Trabajo: </td>
-            <td><input type="text" name="txtCarnetdeTrabajos" placeholder="CarnetdeTrabajos" required></td>
+            <td><input type="text" name="txtCarnetdeTrabajo" placeholder="CarnetdeTrabajos" required></td>
         </tr>
 
         <tr>
             <td>Numero de Documento: </td>
-            <td><input type="text" name="txtNumerodeDocumentos" placeholder="NumerodeDocumentos" required></td>
+            <td><input type="text" name="txtNumerodeDocumento" placeholder="Documento anterior" required></td>
         </tr>
 
 
@@ -103,7 +120,7 @@
 
         <tr>
             <td>Estrato: </td>
-            <td><input type="number" name="txtEstrato"></td>
+            <td><input type="number" name="txtestrato"></td>
         </tr>
 
 
