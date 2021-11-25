@@ -6,17 +6,17 @@ $id = $_GET['id'];
 
 if (!isset($_SESSION['NumerodeDocumento'])) {
 
-	header('Location: ../../Cuenta/Vista/iniciarsesion.php');
+	header('Location: ../../../Cuenta/Vista/iniciarsesion.php');
 
 }elseif(isset($_SESSION['NumerodeDocumento'])){
 
+
 		include '../model/conexion.php';
-		$sentencia = $bd->query("SELECT * FROM persona INNER JOIN roles ON persona.id_rol = roles.Id WHERE NumerodeDocumento = $id;");
+		$sentencia = $bd->query("SELECT * FROM persona INNER JOIN domiciliarios ON persona.NumerodeDocumento = domiciliarios.NumerodeDocumento WHERE NumerodeDocumento = $id;");
 		$usuarios = $sentencia->fetchAll(PDO::FETCH_OBJ);
 		//print_r($productos);
 	
 }
-
 				foreach ($usuarios as $dato) {
                     
 			
@@ -32,7 +32,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../CSS/estilo.css">
-	<link rel="stylesheet" href="../CSS/empleado.css">
+	<link rel="stylesheet" href="../CSS/empleados.css">
   	<link rel="stylesheet" href="../../CuentaAdmi/CSS/index.css">
   	<link rel="stylesheet" href="../../CuentaAdmi/CSS/perfil.css">
     <title>Datos Empleado</title>
@@ -146,7 +146,6 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
                         <td><a class="eliminar" href="../Controlador/eliminar.php?id=<?php echo $dato->NumerodeDocumento; ?>">Eliminar</a></td>
 					</tr>
 				</tbody>
-
 
 				    
 					<?php

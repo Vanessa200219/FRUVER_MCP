@@ -119,7 +119,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 							<td><?php echo $dato['Apellidos']; ?></td>
 							<td><?php echo $dato['NumerodeDocumento']; ?></td>
 							<td><?php echo $dato['Rol']; ?></td>
-							<td><a class="editar" href="Vista/empleado.php?id=<?php echo $dato['NumerodeDocumento']; ?>">Ver más</a></td>
+							<td><a class="editar" href="Controlador/rolempleado.php?id=<?php echo $dato['NumerodeDocumento']; ?>">Ver más</a></td>
 						</tr>
 			
 					</table>
@@ -155,7 +155,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 						<td><?php echo $dato->Apellidos; ?></td>
 						<td><?php echo $dato->NumerodeDocumento; ?></td>
 						<td><?php echo $dato->Rol; ?></td>
-						<td><a class="editar" href="Vista/empleado.php?id=<?php echo $dato->NumerodeDocumento; ?>">Ver más</a></td>
+						<td><a class="editar" href="Controlador/rolempleado.php?id=<?php echo $dato->NumerodeDocumento; ?>">Ver más</a></td>
 					</tr>
 					<?php
 				}

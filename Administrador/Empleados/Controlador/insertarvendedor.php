@@ -23,7 +23,7 @@
     }
 	if ($resultado === TRUE) {
 		//echo "Insertado correctamente";
-		header('Location: ../Vista/empleado.php');
+		header('Location: ../Vista/empleado.php?id='.$NumerodeDocumento);
 	}else{
 		echo "Error";
 	}

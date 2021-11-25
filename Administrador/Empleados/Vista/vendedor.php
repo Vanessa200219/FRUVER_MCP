@@ -2,6 +2,7 @@
 
 session_start();
 
+$id = $_GET['id'];
 
 if (!isset($_SESSION['NumerodeDocumento'])) {
 
@@ -82,7 +83,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
 <section id="contenedor_vendedor">
 
-<form class="form_vendedor" method="POST" action="../Controlador/insertarvendedor.php">
+<form class="form_vendedor" method="POST" action="../Controlador/insertarvendedor.php?id=<?php echo $id; ?>">
 
 <h3 class="Text_center">Datos Vendedor</h3>
 
@@ -95,7 +96,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
         <tr>
             <td>Numero de Documento: </td>
-            <td><input type="text" name="txtNumerodeDocumento" placeholder="Documento anterior" required></td>
+            <td><input type="text" name="txtNumerodeDocumento" placeholder="Documento anterior" value="<?php echo $id; ?>"></td>
         </tr>
 
 
@@ -114,13 +115,13 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
         <tr>
             <td>Ciudad: </td>
-            <td><input type="text" name="txtCiudad"></td>
+            <td><input type="text" name="txtCiudad" required></td>
         </tr>
 
 
         <tr>
             <td>Estrato: </td>
-            <td><input type="number" name="txtestrato"></td>
+            <td><input type="number" name="txtestrato" required></td>
         </tr>
 
 
