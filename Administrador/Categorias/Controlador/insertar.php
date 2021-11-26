@@ -3,7 +3,7 @@
 		exit();
 	}
 
-	include '../model/conexion.php';
+	include '../../Conexion/Conexion.php';
 
 	$NombreC = $_POST['txtNombredeCategoria'];
 	$DescripcionC = $_POST['txtDescripcionCategoria'];

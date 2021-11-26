@@ -9,7 +9,7 @@ $usu = $_SESSION['NumerodeDocumento'];
     
     }elseif(isset($_SESSION['NumerodeDocumento'])){
         
-		include_once( '../Conexion/Conexion.php');
+		include_once( '../../Conexion/Conexion.php');
 			
 		    $statement = $bd->prepare("SELECT * FROM persona WHERE NumerodeDocumento = $usu");
 	        $statement->execute();
@@ -22,6 +22,10 @@ $usu = $_SESSION['NumerodeDocumento'];
             
 
             ?>
+
+
+
+
 
 
 <!DOCTYPE html>
@@ -72,7 +76,7 @@ $usu = $_SESSION['NumerodeDocumento'];
                 <a href="../../Categorias/index.php">Categorias</a>
                 <a href="">Productos</a>
                 <a href="">Formas de Pago</a>
-                <a href="" class="historial">Proveedores</a>
+                <a href="../../Proveedores/index.php" class="historial">Proveedores</a>
                 <a class="" href="#contact">Facturas</a>
                 <a class="salir" href="../../../Cuenta/Controlador/CerrarSesion.php">Salir</a>
               </div>

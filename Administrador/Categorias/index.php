@@ -8,7 +8,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 	header('Location: ../../Cuenta/Vista/iniciarsesion.php');
 
 }elseif(isset($_SESSION['NumerodeDocumento'])){
-		include 'model/conexion.php';
+		include '../Conexion/Conexion.php';
 		$sentencia = $bd->query("SELECT * FROM categoria;");
 		$categorias = $sentencia->fetchAll(PDO::FETCH_OBJ);
 		//print_r($productos);
@@ -25,8 +25,8 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../CuentaAdmi/CSS/index.css">
-  <link rel="stylesheet" href="../CuentaAdmi/CSS/perfil.css">
+  	<link rel="stylesheet" href="../CuentaAdmi/CSS/index.css">
+  	<link rel="stylesheet" href="../CuentaAdmi/CSS/perfil.css">
 	<link rel="stylesheet" href="../Empleados/CSS/estilos.css">
 	<link rel="stylesheet" href="../Empleados/CSS/buscador.css">
 	<title>Lista de Categorias</title>
@@ -65,7 +65,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
                 <a href="../Categorias/index.php">Categorias</a>
                 <a href="">Productos</a>
                 <a href="">Formas de Pago</a>
-                <a href="" class="historial">Proveedores</a>
+                <a href="../Proveedores/index.php" class="historial">Proveedores</a>
                 <a class="" href="">Facturas</a>
                 <a class="salir" href="../../Cuenta/Controlador/CerrarSesion.php">Salir</a>
               </div>

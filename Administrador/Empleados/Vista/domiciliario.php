@@ -2,12 +2,14 @@
 
 session_start();
 
+$id = $_GET['id'];
 
 if (!isset($_SESSION['NumerodeDocumento'])) {
 
 	header('Location: ../../../Cuenta/Vista/iniciarsesion.php');
 
 }elseif(isset($_SESSION['NumerodeDocumento'])){
+  include '../../Conexion/Conexion.php';
 
 	
 }
@@ -64,7 +66,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
                 <a href="../../Categorias/index.php">Categorias</a>
                 <a href="">Productos</a>
                 <a href="">Formas de Pago</a>
-                <a href="" class="historial">Proveedores</a>
+                <a href="../../Proveedores/index.php" class="historial">Proveedores</a>
                 <a class="" href="">Facturas</a>
                 <a class="salir" href="../../../Cuenta/Controlador/CerrarSesion.php">Salir</a>
               </div>
@@ -77,13 +79,13 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
   <!-- FIN DE MENU -->
 
 
-  <center>
+<center>
 <!-- Insertar Nuevo Empleado -->
 
 
 <section id="contenedor_vendedor">
 
-<form class="form_vendedor" method="POST" action="../Controlador/insertarDomiciliario.php">
+<form class="form_vendedor" method="POST" action="../Controlador/insertarDomiciliario.php?id=<?php echo $id; ?>">
 
 <h3 class="Text_center">Datos Domiciliario</h3>
 
@@ -91,7 +93,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
     <table id="table_vendedor">
         <tr>
             <td>Numero de Documento: </td>
-            <td><input type="text" name="txtNumerodeDocumento" placeholder="Documento Anterior" required></td>
+            <td><input type="text" name="txtNumerodeDocumento" value="<?php echo $id; ?>"> </td>
         </tr>
 
         <tr>
@@ -102,7 +104,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
         <tr>
             <td>Numero Seguro Dom: </td>
-            <td><input type="number" name="txtNumeroSeguroDom" required></td>
+            <td><input type="text" name="txtNumeroSeguroDom" required></td>
         </tr>
 
 
@@ -115,7 +117,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
         <tr>
             <td>Valor Domicilio: </td>
-            <td><input type="text" name="txtValorDomicilio"></td>
+            <td><input type="text" name="txtValorDomicilio" required></td>
         </tr>
 
 

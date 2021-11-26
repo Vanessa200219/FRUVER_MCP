@@ -10,7 +10,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
 }elseif(isset($_SESSION['NumerodeDocumento'])){
 
-		include '../model/conexion.php';
+		include '../../Conexion/Conexion.php';
 		$sentencia = $bd->query("SELECT * FROM persona INNER JOIN roles ON persona.id_rol = roles.Id WHERE NumerodeDocumento = $id;");
 		$usuarios = $sentencia->fetchAll(PDO::FETCH_OBJ);
 		print_r($usuarios);

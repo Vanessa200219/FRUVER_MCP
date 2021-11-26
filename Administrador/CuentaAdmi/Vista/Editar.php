@@ -8,7 +8,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 	header('Location: ../../../Cuenta/Vista/iniciarsesion.php');
 
 }elseif(isset($_SESSION['NumerodeDocumento'])){
-	include '../Conexion/Conexion.php';
+	include '../../Conexion/Conexion.php';
 		$id = $_GET['id'];
 
 		$sentencia = $bd->prepare("SELECT * FROM persona WHERE NumerodeDocumento = ?;");
@@ -66,7 +66,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
                 <a href="../../Categorias/index.php">Categorias</a>
                 <a href="">Productos</a>
                 <a href="">Formas de Pago</a>
-                <a href="" class="historial">Proveedores</a>
+                <a href="../../Proveedores/index.php" class="historial">Proveedores</a>
                 <a class="" href="#contact">Facturas</a>
                 <a class="salir" href="../../../Cuenta/Controlador/CerrarSesion.php">Salir</a>
               </div>

@@ -8,7 +8,7 @@ if (!isset($_POST['oculto'])) {
 }
 // print_r($_POST);
 
-include '../Conexion/Conexion.php';
+include '../../Conexion/Conexion.php';
 
 $id3 = $_POST['id3'];
 

@@ -5,7 +5,7 @@
 		exit();
 	}
 
-	include '../model/conexion.php';
+	include '../../Conexion/Conexion.php';
 
 	try {
 	$CarnetdeTrabajo = $_POST['txtCarnetdeTrabajo'];
@@ -23,7 +23,7 @@
     }
 	if ($resultado === TRUE) {
 		//echo "Insertado correctamente";
-		header('Location: ../Vista/empleado.php?id='.$NumerodeDocumento);
+		header('Location: ../Vista/empleadoV.php?id='.$NumerodeDocumento);
 	}else{
 		echo "Error";
 	}

@@ -11,7 +11,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 }elseif(isset($_SESSION['NumerodeDocumento'])){
 
 
-		include '../model/conexion.php';
+		include '../../Conexion/Conexion.php';
 		$sentencia = $bd->query("SELECT * FROM persona INNER JOIN roles ON persona.id_rol = roles.Id INNER JOIN domiciliarios ON persona.NumerodeDocumento = domiciliarios.NumerodeDocumento WHERE persona.NumerodeDocumento = $id;");
 		$usuarios = $sentencia->fetchAll(PDO::FETCH_OBJ);
 		//print_r($productos);
@@ -72,7 +72,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
                 <a href="../../Categorias/index.php">Categorias</a>
                 <a href="">Productos</a>
                 <a href="">Formas de Pago</a>
-                <a href="" class="historial">Proveedores</a>
+                <a href="../../Proveedores/index.php" class="historial">Proveedores</a>
                 <a class="" href="">Facturas</a>
                 <a class="salir" href="../../../Cuenta/Controlador/CerrarSesion.php">Salir</a>
               </div>

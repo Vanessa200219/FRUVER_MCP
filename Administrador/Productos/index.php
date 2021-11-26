@@ -1,6 +1,6 @@
 <?php  
 
-		include 'model/conexion.php';
+		include '../Conexion/Conexion.php';
 		$sentencia = $bd->query("SELECT * FROM productos;");
 		$productos = $sentencia->fetchAll(PDO::FETCH_OBJ);
 		//print_r($productos);

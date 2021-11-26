@@ -1,4 +1,5 @@
 <?php  
+
 session_start();
 
 $id = $_GET['id'];
@@ -8,29 +9,30 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 	header('Location: ../../../Cuenta/Vista/iniciarsesion.php');
 
 }elseif(isset($_SESSION['NumerodeDocumento'])){
-	include '../../Conexion/Conexion.php';
-
-		$sentencia = $bd->prepare("SELECT * FROM categoria WHERE CodigoCategoria = ?;");
-		$sentencia->execute([$id]);
-		$categorias1 = $sentencia->fetch(PDO::FETCH_OBJ);
-		//print_r($productos1);
+  include '../../Conexion/Conexion.php';
+	
 }
 
 ?>
 
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Editar Categoria</title>
-	<meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<link rel="stylesheet" href="../../CuentaAdmi/CSS/index.css">
-  	<link rel="stylesheet" href="../../CuentaAdmi/CSS/perfil.css">
+  	<link rel="stylesheet" href="../../Empleados/CSS/vendedor.css">
 	<link rel="stylesheet" href="../../Empleados/CSS/estilos.css">
-	<link rel="stylesheet" href="../../Empleados/CSS/buscador.css">
+  	<link rel="stylesheet" href="../../CuentaAdmi/CSS/perfil.css">
+    <title>Datos Complementarios</title>
 </head>
 <body>
 
-<!-- MENU -->
+
+
+    <!-- MENU -->
   
 <section id="header">
     <div class="header">
@@ -75,33 +77,61 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
   <!-- FIN DE MENU -->
 
 
-
-  <div class="div__firmts">
-	<center>
-		<h3>Editar Categoria:</h3>
-		<form method="POST" action="../Controlador/editarProceso.php">
-			<table class="form__items">
-				<tr>
-					<td>Nombre Categoria: </td>
-					<td><input type="text" name="txt2NombreCategoria" value="<?php echo $categorias1->NombredeCategoria; ?>"></td>
-				</tr>
-				<tr>
-					<td>Descripcion Categoria: </td>
-					<td><input type="text" name="txt2DescripcionCategoria" value="<?php echo $categorias1->DescripcionCategoria; ?>"></td>
-				</tr>
-				<tr>
-					<input type="hidden" name="oculto">
-					<input type="hidden" name="id2" value="<?php echo $categorias1->CodigoCategoria; ?>">
-					<td colspan="2"><input type="submit" value="Aceptar"></td>
-				</tr>
-			</table>
-		</form>
-	</center>
-</div>
+  <center>
 
 
 
-<script src="../../../indexJava/app.js"></script> 
-<script src="../../CuentaAdmi/Java/index.js"></script>
+  <!-- Insertar  -->
+
+
+<section id="contenedor_vendedor">
+
+    <form class="form_vendedor" method="POST" action="../Controlador/insertarProveedor.php?id=<?php echo $id; ?>">
+
+    <h3 class="Text_center">Datos Vendedor</h3>
+
+
+        <table id="table_vendedor">
+            
+        
+            <tr>
+                <td>Numero de Documento: </td>
+                <td><input type="text" name="txtNumerodeDocumento" placeholder="Documento anterior" value="<?php echo $id; ?>"></td>
+            </tr>
+
+
+            <tr>
+                <td>Nit Proveedor : </td>
+                <td><input type="text" name="txtNitProveedor" required></td>
+            </tr>
+
+
+            <tr>
+                <td>Ciudad: </td>
+                <td><input type="text" name="txtCiudad" required></td>
+            </tr>
+
+
+            <input type="hidden" name="oculto" value="1">
+
+
+            <tr>
+                <td><input type="reset" name=""></td>
+                <td><input type="submit" name="Enviar" value="Registrarse"></td>
+            </tr>
+        </table>
+    </form>
+</section>
+<!-- Insertar FIN -->
+
+
+
+
+</center>
+
+
+
+  	<script src="../../../indexJava/app.js"></script> 
+	<script src="../../CuentaAdmi/Java/index.js"></script>
 </body>
 </html>

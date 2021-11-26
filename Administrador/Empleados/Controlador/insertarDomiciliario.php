@@ -5,7 +5,7 @@
 		exit();
 	}
 
-	include '../model/conexion.php';
+	include '../../Conexion/Conexion.php';
 
 	try {
 	$NumerodeDocumento = $_POST['txtNumerodeDocumento'];
@@ -18,11 +18,11 @@
 	$resultado = $sentencia->execute([$NumerodeDocumento,$CarnetdeTrabajo,$NumeroSeguroDom,$NumeroSeguroVehi,$ValorDomicilio]);
 
 	} catch(PDOException) {
-		//  echo '<script language="javascript">alert("Error al ingresar datos");window.location.href="../index.php"</script>';
+		 echo '<script language="javascript">alert("Error al ingresar datos");window.location.href="../index.php"</script>';
     }
 	if ($resultado === TRUE) {
 		//echo "Insertado correctamente";
-		header('Location: ../Vista/empleado.php');
+		header('Location: ../Vista/empleadoD.php?id='.$NumerodeDocumento);
 	}else{
 		echo "Error";
 	}

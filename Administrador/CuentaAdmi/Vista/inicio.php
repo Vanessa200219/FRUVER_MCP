@@ -7,7 +7,7 @@
 
 	}elseif(isset($_SESSION['NumerodeDocumento'])){
 
-		include '../Conexion/Conexion.php';
+		include '../../Conexion/Conexion.php';
 		$sentencia = $bd->query("SELECT * FROM usuario;");
 		$persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
@@ -67,7 +67,7 @@
                 <a href="../../Categorias/index.php">Categorias</a>
                 <a href="">Productos</a>
                 <a href="">Formas de Pago</a>
-                <a href="" class="historial">Proveedores</a>
+                <a href="../../Proveedores/index.php" class="historial">Proveedores</a>
                 <a class="" href="">Facturas</a>
                 <a class="salir" href="../../../Cuenta/Controlador/CerrarSesion.php">Salir</a>
               </div>

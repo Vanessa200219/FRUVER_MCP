@@ -6,7 +6,7 @@
 		header('Location: ../Vista/inicio.php');
 	}
 
-	include '../Conexion/Conexion.php';
+	include '../../Conexion/Conexion.php';
 	$id2 = $_POST['id2'];
     $nombre2=$_POST['Nombres2'];
     $apellido2=$_POST['Apellidos2'];

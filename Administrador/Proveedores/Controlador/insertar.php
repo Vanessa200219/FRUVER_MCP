@@ -15,36 +15,21 @@
     $correo = $_POST['txtCorreoElectronico'];
     $sexo=$_POST['txtSexo'];
 	$contrasena=md5($_POST['txtContrasena']);
-	$id_rol = $_POST['txtRol'];
-
+	$id_rol = 4;
     $sentencia = $bd->prepare("INSERT INTO persona(Nombres,Apellidos,TipodeDocumento,NumerodeDocumento,Telefono,CorreoElectronico,Sexo,Contrasena,id_rol) VALUES (?,?,?,?,?,?,?,?,?);");
 	$resultado = $sentencia->execute([$nombres,$apellidos,$tipodoc,$numDoc,$telefono,$correo,$sexo,$contrasena,$id_rol]);
 
 
 } catch(PDOException) {
-	echo '<script language="javascript">alert("Error .... El documento ya existe");window.location.href="../index.php"</script>';
+	// echo '<script language="javascript">alert("Error .... El documento ya existe");window.location.href="../index.php"</script>';
     
 }
 
 	if ($resultado === TRUE) {
 		//echo "Insertado correctamente";
-		// header('Location: ../Vista/vendedor.php');
-
-		if (isset($id_rol)) {
-			switch ($id_rol) {
-				case 3:
-					header('Location: ../Vista/vendedor.php?id='.$numDoc);
-					break;
-	
-				case 5:
-					header('Location: ../Vista/domiciliario.php?id='.$numDoc);
-					break;
-				
-				default:
-				
-			}
-		}
+		header('Location: ../Vista/Proveedor.php?id='.$numDoc);
 	}else{
 		echo "Error";
 	}
 ?>
+

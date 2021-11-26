@@ -4,7 +4,7 @@
 	}
 
 	$codigo = $_GET['id'];
-	include '../model/conexion.php';
+	include '../../Conexion/Conexion.php';
 	$sentencia = $bd->prepare("DELETE FROM categoria WHERE CodigoCategoria  = ?;");
 	$resultado = $sentencia->execute([$codigo]);
 

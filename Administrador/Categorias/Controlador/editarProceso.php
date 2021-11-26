@@ -4,7 +4,7 @@
 		header('Location: index.php');
 	}
 
-	include '../model/conexion.php';
+	include '../../Conexion/Conexion.php';
 	$id2 = $_POST['id2'];
 	$NombreC2 = $_POST['txt2NombreCategoria'];
 	$DescripcionC2 = $_POST['txt2DescripcionCategoria'];

@@ -10,7 +10,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 }elseif(isset($_SESSION['NumerodeDocumento'])){
 	include '../../Conexion/Conexion.php';
 
-		$sentencia = $bd->prepare("SELECT * FROM categoria WHERE CodigoCategoria = ?;");
+		$sentencia = $bd->prepare("SELECT * FROM persona WHERE NumerodeDocumento = ?;");
 		$sentencia->execute([$id]);
 		$categorias1 = $sentencia->fetch(PDO::FETCH_OBJ);
 		//print_r($productos1);
@@ -76,18 +76,18 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
 
 
-  <div class="div__firmts">
+<div class="div__firmts">
 	<center>
 		<h3>Editar Categoria:</h3>
 		<form method="POST" action="../Controlador/editarProceso.php">
 			<table class="form__items">
 				<tr>
-					<td>Nombre Categoria: </td>
-					<td><input type="text" name="txt2NombreCategoria" value="<?php echo $categorias1->NombredeCategoria; ?>"></td>
+					<td>Correo: </td>
+					<td><input type="text" name="txt2Correo" value="<?php echo $categorias1->CorreoElectronico; ?>"></td>
 				</tr>
 				<tr>
-					<td>Descripcion Categoria: </td>
-					<td><input type="text" name="txt2DescripcionCategoria" value="<?php echo $categorias1->DescripcionCategoria; ?>"></td>
+					<td>Telefono: </td>
+					<td><input type="text" name="txt2Telefono" value="<?php echo $categorias1->Telefono; ?>"></td>
 				</tr>
 				<tr>
 					<input type="hidden" name="oculto">

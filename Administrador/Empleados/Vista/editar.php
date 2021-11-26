@@ -7,7 +7,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 	header('Location: ../../../Cuenta/Vista/iniciarsesion.php');
 
 }elseif(isset($_SESSION['NumerodeDocumento'])){
-	include '../model/conexion.php';
+	include '../../Conexion/Conexion.php';
 		$id = $_GET['id'];
 
 		$sentencia = $bd->prepare("SELECT * FROM persona WHERE NumerodeDocumento = ?;");
@@ -23,9 +23,9 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 <html lang="en">
 <head>
     <title>Editar Empleado</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="../CSS/estilos.css">
-	<link rel="stylesheet" href="../CSS/empleado.css">
+	  <meta charset="utf-8">
+	  <link rel="stylesheet" href="../CSS/estilos.css">
+	  <link rel="stylesheet" href="../CSS/empleado.css">
   	<link rel="stylesheet" href="../../CuentaAdmi/CSS/index.css">
   	<link rel="stylesheet" href="../../CuentaAdmi/CSS/perfil.css">
 </head>
@@ -64,7 +64,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
                 <a href="../../Categorias/index.php">Categorias</a>
                 <a href="">Productos</a>
                 <a href="">Formas de Pago</a>
-                <a href="" class="historial">Proveedores</a>
+                <a href="../../Proveedores/index.php" class="historial">Proveedores</a>
                 <a class="" href="">Facturas</a>
                 <a class="salir" href="../../../Cuenta/Controlador/CerrarSesion.php">Salir</a>
               </div>
@@ -93,7 +93,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
       <tr>
 				<td>Email: </td>
-				<td><input type="text" name="CorreoElectronico2" pattern=".+@gmail.com" placeholder="ejemplo@gmail.com" value="<?php echo $persona1->CorreoElectronico; ?>"></td>
+				<td><input type="text" name="CorreoElectronico2" pattern=".+@.+.com" placeholder="ejemplo@gmail.com" value="<?php echo $persona1->CorreoElectronico; ?>"></td>
 			</tr>
 
 
