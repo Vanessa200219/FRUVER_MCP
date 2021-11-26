@@ -72,7 +72,7 @@ $usu = $_SESSION['NumerodeDocumento'];
               <span class="caret"></span>
               <div id="myDropdown" class="dropdown-content">
                 <form action="listar.php" method="POST"><input class="perfil" type="submit" value="Perfil" name="btn2"></form>
-                <a href="">Categorias</a>
+                <a href="../../Categorias/index.php">Categorias</a>
                 <a href="">Productos</a>
                 <a href="">Formas de Pago</a>
                 <a href="" class="historial">Proveedores</a>

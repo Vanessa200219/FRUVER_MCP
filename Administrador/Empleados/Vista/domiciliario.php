@@ -24,7 +24,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<link rel="stylesheet" href="../../CuentaAdmi/CSS/index.css">
   	<link rel="stylesheet" href="../CSS/vendedor.css">
-	<link rel="stylesheet" href="../CSS/estilo.css">
+	  <link rel="stylesheet" href="../CSS/estilos.css">
   	<link rel="stylesheet" href="../../CuentaAdmi/CSS/perfil.css">
     <title>Datos Complementarios</title>
 </head>
@@ -61,7 +61,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
               <span class="caret"></span>
               <div id="myDropdown" class="dropdown-content">
                 <form action="../../CuentaAdmi/Vista/listar.php" method="POST"><input class="perfil" type="submit" value="Perfil" name="btn2"></form>
-                <a href="">Categorias</a>
+                <a href="../../Categorias/index.php">Categorias</a>
                 <a href="">Productos</a>
                 <a href="">Formas de Pago</a>
                 <a href="" class="historial">Proveedores</a>

@@ -12,7 +12,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
 
 		include '../model/conexion.php';
-		$sentencia = $bd->query("SELECT * FROM persona INNER JOIN domiciliarios ON persona.NumerodeDocumento = domiciliarios.NumerodeDocumento WHERE NumerodeDocumento = $id;");
+		$sentencia = $bd->query("SELECT * FROM persona INNER JOIN roles ON persona.id_rol = roles.Id INNER JOIN vendedores ON persona.NumerodeDocumento = vendedores.NumerodeDocumento WHERE persona.NumerodeDocumento = $id;");
 		$usuarios = $sentencia->fetchAll(PDO::FETCH_OBJ);
 		//print_r($productos);
 	
@@ -31,8 +31,8 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../CSS/estilo.css">
-	<link rel="stylesheet" href="../CSS/empleados.css">
+	<link rel="stylesheet" href="../CSS/estilos.css">
+	<link rel="stylesheet" href="../CSS/empleado.css">
   	<link rel="stylesheet" href="../../CuentaAdmi/CSS/index.css">
   	<link rel="stylesheet" href="../../CuentaAdmi/CSS/perfil.css">
     <title>Datos Empleado</title>
@@ -69,7 +69,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
               <span class="caret"></span>
               <div id="myDropdown" class="dropdown-content">
                 <form action="../../CuentaAdmi/Vista/listar.php" method="POST"><input class="perfil" type="submit" value="Perfil" name="btn2"></form>
-                <a href="">Categorias</a>
+                <a href="../../Categorias/index.php">Categorias</a>
                 <a href="">Productos</a>
                 <a href="">Formas de Pago</a>
                 <a href="" class="historial">Proveedores</a>
@@ -86,6 +86,13 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
 <div class="div__firmts">
 <center><h3><?php echo $dato->Nombres; ?></h3></center>
+
+<section class="acciones">
+  <a id="modificar" href="editar.php?id=<?php echo $dato->NumerodeDocumento; ?>">Editar</a>
+  <a class="eliminar" href="../Controlador/eliminar.php?id=<?php echo $dato->NumerodeDocumento; ?>">Eliminar</a>
+</section>
+
+
 		<table class="table__1">
 				<tbody class="empleado_contenido">
 					<tr>
@@ -139,12 +146,40 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
                     </tr>
 
 
-                    
+                    <tr>
+                        <td class="titulo_empleado">Carnet de Trabajo </td>
+                        <td><?php echo $dato->CarnetdeTrabajo; ?></td>
+                    </tr>
 
-                    <tr class="content">
-                        <td><a class="modificar" href="editar.php?id=<?php echo $dato->NumerodeDocumento; ?>">Editar</a></td>
-                        <td><a class="eliminar" href="../Controlador/eliminar.php?id=<?php echo $dato->NumerodeDocumento; ?>">Eliminar</a></td>
-					</tr>
+
+                    <tr>
+                        <td class="titulo_empleado">Fecha de Ingreso </td>
+                        <td><?php echo $dato->FechadeIngreso; ?></td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="titulo_empleado">Sueldo Basico </td>
+                        <td><?php echo $dato->SueldoBasico; ?></td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="titulo_empleado">Direccion </td>
+                        <td><?php echo $dato->Direccion; ?></td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td class="titulo_empleado">Ciudad </td>
+                        <td><?php echo $dato->Ciudad; ?></td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="titulo_empleado">Estrato </td>
+                        <td><?php echo $dato->Estrato; ?></td>
+                    </tr>
 				</tbody>
 
 				    

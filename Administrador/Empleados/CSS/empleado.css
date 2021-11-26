@@ -17,7 +17,11 @@
     text-align: left;
 }
 
-
+.acciones{
+    padding: 2%;
+    width: 100%;
+    margin: auto;
+}
 
 
 .eliminar {
@@ -39,7 +43,7 @@
 }
 
 
-.modificar {
+#modificar {
     text-decoration: none;
     font-size: 18px;
     background: rgb(28, 235, 56);
@@ -51,7 +55,7 @@
 }
 
 
-.modificar:hover {
+#modificar:hover {
     background: rgb(5, 148, 29);
     color: white;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);

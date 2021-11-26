@@ -25,11 +25,11 @@ foreach ($usuarios as $dato) {
 if (isset($dato->id_rol)) {
     switch ($dato->id_rol) {
         case 5:
-            header('Location: ../Vista/empleado.php?id='.$dato->NumerodeDocumento);
+            header('Location: ../Vista/empleadoD.php?id='.$dato->NumerodeDocumento);
             break;
 
         case 3:
-            header('Location: ../Vista/vendedor.php');
+            header('Location: ../Vista/empleadoV.php?id='.$dato->NumerodeDocumento);
             break;
         
         default:

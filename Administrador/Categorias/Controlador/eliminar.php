@@ -4,12 +4,13 @@
 	}
 
 	$codigo = $_GET['id'];
-	include 'model/conexion.php';
+	include '../model/conexion.php';
 	$sentencia = $bd->prepare("DELETE FROM categoria WHERE CodigoCategoria  = ?;");
 	$resultado = $sentencia->execute([$codigo]);
 
 	if ($resultado === TRUE) {
-		header('Location: index.php');
+		// header('Location: index.php');
+		echo '<script language="javascript">alert("Se Elimino Con exito");window.location.href="../index.php"</script>';
 	}else{
 		echo "Error";
 	}

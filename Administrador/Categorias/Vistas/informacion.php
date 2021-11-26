@@ -10,10 +10,19 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
 }elseif(isset($_SESSION['NumerodeDocumento'])){
 
+
+		include '../model/conexion.php';
+		$sentencia = $bd->query("SELECT * FROM categoria WHERE categoria.CodigoCategoria = $id;");
+		$categorias = $sentencia->fetchAll(PDO::FETCH_OBJ);
+		// print_r($categorias);
 	
 }
-
+				foreach ($categorias as $dato) {
+                    // echo $dato->CodigoCategoria;
+                    // echo $dato->Imagen;
+                    
 ?>
+
 
 
 <!DOCTYPE html>
@@ -22,19 +31,20 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../Empleados/CSS/estilos.css">
+	<link rel="stylesheet" href="../../Empleados/CSS/empleado.css">
   	<link rel="stylesheet" href="../../CuentaAdmi/CSS/index.css">
-  	<link rel="stylesheet" href="../CSS/vendedor.css">
-	<link rel="stylesheet" href="../CSS/estilos.css">
   	<link rel="stylesheet" href="../../CuentaAdmi/CSS/perfil.css">
-    <title>Datos Complementarios</title>
+  	<link rel="stylesheet" href="../CSS/links.css">
+    <title>Informacion</title>
 </head>
 <body>
-
+    
 
 
     <!-- MENU -->
   
-  <section id="header">
+<section id="header">
     <div class="header">
       
         <div class="brand">
@@ -51,7 +61,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
           <ul>
             <li><a href="../../CuentaAdmi/Vista/inicio.php" data-after="Inicio">Inicio</a></li>
             <li><a href="" data-after="Ayuda">Buzon de Ayuda</a></li>
-            <li><a href="../index.php" data-after="Productos">Empleados</a></li>
+            <li><a href="../../Empleados/index.php" data-after="Productos">Empleados</a></li>
           </ul>
         </div>
 
@@ -72,79 +82,54 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
       </div>
     </div>
-  </section>
+</section>
 
   <!-- FIN DE MENU -->
 
 
-  <center>
-<!-- Insertar Nuevo Empleado -->
+
+<div class="div__firmts">
+<center><h3><?php echo $dato->NombredeCategoria; ?></h3></center>
 
 
-<section id="contenedor_vendedor">
-
-<form class="form_vendedor" method="POST" action="../Controlador/insertarvendedor.php?id=<?php echo $id; ?>">
-
-<h3 class="Text_center">Datos Vendedor</h3>
-
-
-    <table id="table_vendedor">
-        <tr>
-            <td>Carnet de Trabajo: </td>
-            <td><input type="text" name="txtCarnetdeTrabajo" placeholder="CarnetdeTrabajos" required></td>
-        </tr>
-
-        <tr>
-            <td>Numero de Documento: </td>
-            <td><input type="text" name="txtNumerodeDocumento" placeholder="Documento anterior" value="<?php echo $id; ?>"></td>
-        </tr>
-
-
-        <tr>
-            <td>SueldoBasico: </td>
-            <td><input type="number" name="txtSueldoBasico" required></td>
-        </tr>
-
-
-        <tr>
-            <td>Direccion: </td>
-            <td><input type="text" name="txtDireccion" required></td>
-        </tr>
-
-
-
-        <tr>
-            <td>Ciudad: </td>
-            <td><input type="text" name="txtCiudad" required></td>
-        </tr>
-
-
-        <tr>
-            <td>Estrato: </td>
-            <td><input type="number" name="txtestrato" required></td>
-        </tr>
-
-
-        <input type="hidden" name="oculto" value="1">
-
-
-        <tr>
-            <td><input type="reset" name=""></td>
-            <td><input type="submit" name="Enviar" value="Registrarse"></td>
-        </tr>
-    </table>
-</form>
+<section class="acciones">
+  <a id="links" href="../index.php">Ver Categorias</a>
+  <a id="modificar" href="editar.php?id=<?php echo $dato->CodigoCategoria; ?>">Editar</a>
+  <a class="eliminar" href="../Controlador/eliminar.php?id=<?php echo $dato->CodigoCategoria; ?>">Eliminar</a>
 </section>
-<!-- Insertar Nuevo Empleado FIN -->
+
+    <table class="table__1">
+	    <tbody class="empleado_contenido">
+
+			<tr>
+				<td class="titulo_empleado">Codigo Categoria </td>
+                <td><?php echo $dato->CodigoCategoria; ?></td>
+			</tr>
 
 
+            <tr>
+                <td class="titulo_empleado">Nombre de Categoria</td>
+                <td><?php echo $dato->NombredeCategoria; ?></td>
+            </tr>
 
 
-</center>
+            <tr>
+                <td class="titulo_empleado">Descripcion Categoria</td>
+                <td><?php echo $dato->DescripcionCategoria; ?></td>
+            </tr>
+                    
+				</tbody>
+
+				    
+					<?php
+				}
+			?>
+			
+	</table>
+</div>
 
 
-
-  	<script src="../../../indexJava/app.js"></script> 
-	<script src="../../CuentaAdmi/Java/index.js"></script>
+<script src="../../../indexJava/app.js"></script> 
+<script src="../../CuentaAdmi/Java/index.js"></script>
 </body>
 </html>

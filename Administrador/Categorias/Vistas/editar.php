@@ -1,6 +1,7 @@
 <?php  
 session_start();
 
+$id = $_GET['id'];
 
 if (!isset($_SESSION['NumerodeDocumento'])) {
 
@@ -8,33 +9,30 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
 }elseif(isset($_SESSION['NumerodeDocumento'])){
 	include '../model/conexion.php';
-		$id = $_GET['id'];
 
-		$sentencia = $bd->prepare("SELECT * FROM persona WHERE NumerodeDocumento = ?;");
+		$sentencia = $bd->prepare("SELECT * FROM categoria WHERE CodigoCategoria = ?;");
 		$sentencia->execute([$id]);
-		$persona1 = $sentencia->fetch(PDO::FETCH_OBJ);
+		$categorias1 = $sentencia->fetch(PDO::FETCH_OBJ);
+		//print_r($productos1);
 }
 
 ?>
 
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Editar Empleado</title>
+	<title>Editar Categoria</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="../CSS/estilos.css">
-	<link rel="stylesheet" href="../CSS/empleado.css">
   	<link rel="stylesheet" href="../../CuentaAdmi/CSS/index.css">
   	<link rel="stylesheet" href="../../CuentaAdmi/CSS/perfil.css">
+	<link rel="stylesheet" href="../../Empleados/CSS/estilos.css">
+	<link rel="stylesheet" href="../../Empleados/CSS/buscador.css">
 </head>
 <body>
 
-
-    <!-- MENU -->
+<!-- MENU -->
   
-	<section id="header">
+<section id="header">
     <div class="header">
       
         <div class="brand">
@@ -51,7 +49,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
           <ul>
             <li><a href="../../CuentaAdmi/Vista/inicio.php" data-after="Inicio">Inicio</a></li>
             <li><a href="" data-after="Ayuda">Buzon de Ayuda</a></li>
-            <li><a href="../index.php" data-after="Productos">Empleados</a></li>
+            <li><a href="../../Empleados/index.php" data-after="Productos">Empleados</a></li>
           </ul>
         </div>
 
@@ -72,50 +70,38 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
       </div>
     </div>
-  </section>
+</section>
 
   <!-- FIN DE MENU -->
 
 
 
-  <!-- Registrar -->
-<div class="div__firmts">
-  <center>
-    <h3>Editar Empleado:</h3>
-    <form class="form" method="POST" action="../Controlador/editarProceso.php">
-    <table class="form__items">
-		
-
-			<tr>
-				<td>Telefono: </td>
-				<td><input type="text" name="Telefono2" minlength="10" maxlength="10" value="<?php echo $persona1->Telefono; ?>"></td>
-			</tr>
-
-      <tr>
-				<td>Email: </td>
-				<td><input type="text" name="CorreoElectronico2" pattern=".+@gmail.com" placeholder="ejemplo@gmail.com" value="<?php echo $persona1->CorreoElectronico; ?>"></td>
-			</tr>
-
-
-      <tr>
-				<td>Contraseña: </td>
-				<td><input type="password" name="Contrasena2" value=""></td>
-			</tr>
-
-
-
-			<tr>
-                    <input type="hidden" name="oculto">
-					<input type="hidden" name="id2" value="<?php echo $persona1->NumerodeDocumento ;?>">
+  <div class="div__firmts">
+	<center>
+		<h3>Editar Categoria:</h3>
+		<form method="POST" action="../Controlador/editarProceso.php">
+			<table class="form__items">
+				<tr>
+					<td>Nombre Categoria: </td>
+					<td><input type="text" name="txt2NombreCategoria" value="<?php echo $categorias1->NombredeCategoria; ?>"></td>
+				</tr>
+				<tr>
+					<td>Descripcion Categoria: </td>
+					<td><input type="text" name="txt2DescripcionCategoria" value="<?php echo $categorias1->DescripcionCategoria; ?>"></td>
+				</tr>
+				<tr>
+					<input type="hidden" name="oculto">
+					<input type="hidden" name="id2" value="<?php echo $categorias1->CodigoCategoria; ?>">
 					<td colspan="2"><input type="submit" value="Aceptar"></td>
-			</tr>
-		</table>
-	</form>
-    </center>
+				</tr>
+			</table>
+		</form>
+	</center>
 </div>
 
 
-	<script src="../../../indexJava/app.js"></script> 
-	<script src="../../CuentaAdmi/Java/index.js"></script>
+
+<script src="../../../indexJava/app.js"></script> 
+<script src="../../CuentaAdmi/Java/index.js"></script>
 </body>
 </html>

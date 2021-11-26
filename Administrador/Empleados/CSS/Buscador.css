@@ -53,4 +53,20 @@
     background: brown;
     padding: 5px;
 }
+
+
+
+
+.empleado{
+    text-decoration: none;
+    color: black;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+
+.empleado:hover{
+    color: red;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
 /* Fin de Buscador Empleados */

@@ -24,8 +24,8 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 <head>
 	<title>Empledos</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="CSS/estilo.css">
-	<link rel="stylesheet" href="CSS/Buscador.css">
+	<link rel="stylesheet" href="CSS/estilos.css">
+	<link rel="stylesheet" href="CSS/buscador.css">
   	<link rel="stylesheet" href="../CuentaAdmi/CSS/index.css">
   	<link rel="stylesheet" href="../CuentaAdmi/CSS/perfil.css">
 </head>
@@ -60,7 +60,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
               <span class="caret"></span>
               <div id="myDropdown" class="dropdown-content">
                 <form action="../CuentaAdmi/Vista/listar.php" method="POST"><input class="perfil" type="submit" value="Perfil" name="btn2"></form>
-                <a href="">Categorias</a>
+                <a href="../Categorias/index.php">Categorias</a>
                 <a href="">Productos</a>
                 <a href="">Formas de Pago</a>
                 <a href="" class="historial">Proveedores</a>
@@ -78,8 +78,11 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
 <center>
 
+
 		<!-- Mostrar Empleados -->
-	<div class="div__firmts">
+<div class="div__firmts">
+	<a href="#form" class="empleado">Nuevo Empleado</a>
+		<!-- Buscador -->
 
 			<section class="buscador">
 				<div >
@@ -131,11 +134,11 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
 					?>
 
+		<!-- Buscador Fin -->
 
 
 
-
-			<h3>Empleados</h3>
+		<h3>Empleados</h3>
 		<table class="table__1">
 				<tbody>
 					<tr class="td__tittle">
@@ -170,7 +173,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 		
 		<h3>Nuevo Empleado:</h3>
 
-		<form class="form" method="POST" action="Controlador/insertar.php">
+		<form id="form" class="form" method="POST" action="Controlador/insertar.php">
 			<table class="form__items">
             	<tr>
 					<td>Nombre: </td>
