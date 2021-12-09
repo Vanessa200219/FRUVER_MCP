@@ -7,10 +7,10 @@
 	include '../../Conexion/Conexion.php';;
 	$id2 = $_POST['id2'];
     $Correo2=$_POST['txt2Correo'];
-    $telefono=$_POST['txt2Telefono'];
+    $telefono2=$_POST['txt2Telefono'];
 
 	$sentencia = $bd->prepare("UPDATE persona SET Telefono = ?, CorreoElectronico = ? WHERE NumerodeDocumento  = ?;");
-	$resultado = $sentencia->execute([$telefono,$Correo2,$id2]);
+	$resultado = $sentencia->execute([$telefono2,$Correo2,$id2]);
 
 	if ($resultado === TRUE) {
         // header('Location: ../index.php');

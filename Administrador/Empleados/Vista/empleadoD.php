@@ -139,6 +139,11 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
                         <td>--------</td>
                     </tr>
 
+                    <tr>
+                        <td class="titulo_empleado">Carnet de Trabajo </td>
+                        <td><?php echo $dato->CarnetdeTrabajo; ?></td>
+                    </tr>
+
 
                     <tr>
                         <td class="titulo_empleado">Rol</td>

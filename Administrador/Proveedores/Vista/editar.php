@@ -78,7 +78,7 @@ if (!isset($_SESSION['NumerodeDocumento'])) {
 
 <div class="div__firmts">
 	<center>
-		<h3>Editar Categoria:</h3>
+		<h3>Editar Proveedor:</h3>
 		<form method="POST" action="../Controlador/editarProceso.php">
 			<table class="form__items">
 				<tr>

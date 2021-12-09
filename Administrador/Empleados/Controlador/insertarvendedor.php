@@ -19,7 +19,7 @@
 	$resultado = $sentencia->execute([$CarnetdeTrabajo,$NumerodeDocumento,$SueldoBasico,$Direccion,$Ciudad,$estrato]);
 
 	} catch(PDOException) {
-		 echo '<script language="javascript">alert("Error al ingresar datos");window.location.href="../index.php"</script>';
+		//  echo '<script language="javascript">alert("Error al ingresar datos");window.location.href="../index.php"</script>';
     }
 	if ($resultado === TRUE) {
 		//echo "Insertado correctamente";
