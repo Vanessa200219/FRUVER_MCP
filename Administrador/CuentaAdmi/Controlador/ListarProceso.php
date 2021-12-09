@@ -74,7 +74,7 @@ $usu = $_SESSION['NumerodeDocumento'];
                 <form action="listar.php" method="POST"><input class="perfil" type="submit" value="Perfil" name="btn2"></form>
                 <a href="../../Categorias/index.php">Categorias</a>
                 <a href="">Productos</a>
-                <a href="">Formas de Pago</a>
+                <a href="../../FormasdePago/index.php">Formas de Pago</a>
                 <a href="../../Proveedores/index.php" class="historial">Proveedores</a>
                 <a class="" href="#contact">Facturas</a>
                 <a class="salir" href="../../../Cuenta/Controlador/CerrarSesion.php">Salir</a>
